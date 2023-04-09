@@ -64,6 +64,7 @@ public class MainActivity extends Cars {
             //vehicle9.setImageDrawable(drawable[9]);
         }
 
+
         View.OnClickListener onClickListener = new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -80,39 +81,39 @@ public class MainActivity extends Cars {
                         break;
                     case R.id.Vehicle1:
                         Intent = new Intent(getApplicationContext(), ViewActivity.class);
-                        vehicleId = 1;
+                        setVehicleId(1);
                         startActivity(Intent);
                     case R.id.Vehicle2:
                         Intent = new Intent(getApplicationContext(), ViewActivity.class);
-                        vehicleId = 2;
+                        setVehicleId(2);
                         startActivity(Intent);
                     case R.id.Vehicle3:
                         Intent = new Intent(getApplicationContext(), ViewActivity.class);
-                        vehicleId = 3;
+                        setVehicleId(3);
                         startActivity(Intent);
                     case R.id.Vehicle4:
                         Intent = new Intent(getApplicationContext(), ViewActivity.class);
-                        vehicleId = 4;
+                        setVehicleId(4);
                         startActivity(Intent);
                     case R.id.Vehicle5:
                         Intent = new Intent(getApplicationContext(), ViewActivity.class);
-                        vehicleId = 5;
+                        setVehicleId(5);
                         startActivity(Intent);
                     case R.id.Vehicle6:
                         Intent = new Intent(getApplicationContext(), ViewActivity.class);
-                        vehicleId = 6;
+                        setVehicleId(6);
                         startActivity(Intent);
                     case R.id.Vehicle7:
                         Intent = new Intent(getApplicationContext(), ViewActivity.class);
-                        vehicleId = 7;
+                        setVehicleId(7);
                         startActivity(Intent);
                     case R.id.Vehicle8:
                         Intent = new Intent(getApplicationContext(), ViewActivity.class);
-                        vehicleId = 8;
+                        setVehicleId(8);
                         startActivity(Intent);
                     case R.id.Vehicle9:
                         Intent = new Intent(getApplicationContext(), ViewActivity.class);
-                        vehicleId = 9;
+                        setVehicleId(9);
                         startActivity(Intent);
 
                     default:

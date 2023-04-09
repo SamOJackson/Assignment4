@@ -24,8 +24,7 @@ public class ViewActivity extends Cars{
         setContentView(R.layout.activity_view);
         carArray = MainActivity.getArray();
 
-        int current = vehicleId;
-        Cars currentCar = carArray.get(current);
+        Cars currentCar = carArray.get(getVehicleId());
 
 //        switch(current) {
 //            case 1: {

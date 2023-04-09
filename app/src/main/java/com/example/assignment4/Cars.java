@@ -1,5 +1,6 @@
 package com.example.assignment4;
 
+import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 
@@ -14,7 +15,15 @@ public class Cars extends AppCompatActivity {
     private String carCompany;
     private boolean isAvailable;
     private String carName;
-    public static int vehicleId;
+    private int vehicleId;
+    public int getVehicleId() {
+        return vehicleId;
+    }
+
+    public void setVehicleId(int vehicleId) {
+        this.vehicleId = vehicleId;
+    }
+
     String redCarPath = "/./././res/drawable/redcar.png";
     String yellowCarPath = "/./././res/drawable/yellowcar.jpg";
     String carsCarPath = "/./././res/drawable/carscar.jpg";
@@ -97,14 +106,19 @@ public class Cars extends AppCompatActivity {
 
         return true;
     }
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        createArray();
+    }
     public void createArray() {
         carArray = new ArrayList<Cars>();
-        Cars car1 = new Cars("Red Car", "/./././res/drawable/redcar.png", "Red Car Company");
-        Cars car2 = new Cars("Yellow Car", "/./././res/drawable/yellowcar.jpg", "Yellow Car Company");
-        Cars car3 = new Cars("Cars Car", "/./././res/drawable/yellowcar.jpg", "Cars Car Company");
-        Cars car4 = new Cars("Redder Car", "/./././res/drawable/redcar.png", "Redder Car Company");
-        Cars car5 = new Cars("Yellower Car", "/./././res/drawable/yellowcar.jpg", "Yellower Car Company");
-        Cars car6 = new Cars("Carser Car", "/./././res/drawable/yellowcar.jpg", "Carser Car Company");
+        Cars car1 = new Cars("Red Car", "/res/drawable/redcar.png", "Red Car Company");
+        Cars car2 = new Cars("Yellow Car", "/res/drawable/yellowcar.jpg", "Yellow Car Company");
+        Cars car3 = new Cars("Cars Car", "/res/drawable/yellowcar.jpg", "Cars Car Company");
+        Cars car4 = new Cars("Redder Car", "/res/drawable/redcar.png", "Redder Car Company");
+        Cars car5 = new Cars("Yellower Car", "/res/drawable/yellowcar.jpg", "Yellower Car Company");
+        Cars car6 = new Cars("Carser Car", "/res/drawable/yellowcar.jpg", "Carser Car Company");
 
         carArray.add(car1);
         carArray.add(car2);

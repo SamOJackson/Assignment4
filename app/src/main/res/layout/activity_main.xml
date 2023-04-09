@@ -33,19 +33,19 @@
                 android:id="@+id/Vehicle1"
                 android:layout_width="130dp"
                 android:layout_height="130dp"
-                app:srcCompat="@drawable/carscar" />
+                app:srcCompat="@drawable/redcar" />
 
             <ImageView
                 android:id="@+id/Vehicle2"
                 android:layout_width="130dp"
                 android:layout_height="130dp"
-                app:srcCompat="@drawable/redcar" />
+                app:srcCompat="@drawable/yellowcar" />
 
             <ImageView
                 android:id="@+id/Vehicle3"
                 android:layout_width="130dp"
                 android:layout_height="130dp"
-                app:srcCompat="@drawable/yellowcar" />
+                app:srcCompat="@drawable/carscar" />
         </TableRow>
 
         <TableRow
