@@ -48,15 +48,15 @@ public class ModifyActivity extends Cars {
                 Button submit = (Button) findViewById(R.id.submit);
 
                 switch (selectedItemId) {
-                    case R.id.vehicleButton:
+                    case R.id.vehicleButton2:
                         Intent Intent = new Intent(getApplicationContext(), MainActivity.class);
                         startActivity(Intent);
                         break;
-                    case R.id.Add:
+                    case R.id.Add2:
                         Intent = new Intent(getApplicationContext(), AddActivity.class);
                         startActivity(Intent);
                         break;
-                    case R.id.Modify:
+                    case R.id.Modify2:
                         Intent = new Intent(getApplicationContext(), ModifyActivity.class);
                         startActivity(Intent);
                         break;
