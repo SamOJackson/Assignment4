@@ -64,6 +64,7 @@ public class ViewActivity extends Cars{
                         break;
                     case R.id.Modify:
                         Intent = new Intent(getApplicationContext(), ModifyActivity.class);
+                        Intent.putExtra("Current", currentCar);
                         startActivity(Intent);
                         break;
                     default:

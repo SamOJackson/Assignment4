@@ -23,12 +23,14 @@ public class MainActivity extends Cars {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        ArrayList<Cars> carArray = (ArrayList<Cars>) getIntent().getSerializableExtra("Array");
-
-
-        Intent intent;
+//        ArrayList<Cars> carArray = (ArrayList<Cars>) getIntent().getSerializableExtra("Array");
+//
+//
+//        Intent intent;
         Drawable drawable;
 //        int i = 0;
+
+        ArrayList<Cars> carArray = createArray();
 
 //        for (Cars c: carArray) {
          for(int i = 0; i < carArray.size(); i ++ ) {

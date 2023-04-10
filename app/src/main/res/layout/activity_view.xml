@@ -46,8 +46,8 @@
 
     <Button
         android:id="@+id/Modify"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="86dp"
+        android:layout_height="38dp"
         android:backgroundTint="#FFDADA"
         android:text="Modify"
         app:layout_constraintBottom_toBottomOf="parent"

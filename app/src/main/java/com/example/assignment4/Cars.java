@@ -216,7 +216,7 @@ public class Cars extends AppCompatActivity implements Serializable{
 
         return true;
     }
-    public void createArray() {
+    public ArrayList<Cars> createArray() {
 
         carArray = new ArrayList<>();
         Cars car1 = new Cars("Red Car", "Red Car Company", true);
@@ -232,6 +232,8 @@ public class Cars extends AppCompatActivity implements Serializable{
         carArray.add(car4);
         carArray.add(car5);
         carArray.add(car6);
+
+        return carArray;
     }
     public ArrayList<Cars> getArray(){
         return carArray;
@@ -241,12 +243,12 @@ public class Cars extends AppCompatActivity implements Serializable{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        createArray();
-        Intent intent;
-
-        intent = new Intent(getApplicationContext(), getClass());
-        intent.putExtra("Array", carArray);
-        startActivity(intent);
+//        createArray();
+//        Intent intent;
+//
+//        intent = new Intent(getApplicationContext(), getClass());
+//        intent.putExtra("Array", carArray);
+//        startActivity(intent);
     }
 
 }
