@@ -39,17 +39,12 @@ public class ModifyActivity extends Cars {
         TextView details = findViewById(R.id.CurrentCompany2);
         details.setText(currentCar.getCarCompany());
 
-
         View.OnClickListener onClickListener = new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
                 int selectedItemIdM = view.getId();
 
-                EditText editText = findViewById(R.id.CarName);
-                EditText editCompany = findViewById(R.id.CarCompany);
-                CheckBox simpleCheckBox = (CheckBox) findViewById(R.id.available);
-                Button submit = (Button) findViewById(R.id.submit);
                 Intent Intent;
                 switch (selectedItemIdM) {
                     case R.id.vehicleButton2:
@@ -58,9 +53,8 @@ public class ModifyActivity extends Cars {
                         break;
                     case R.id.Add2:
                         Intent = new Intent(getApplicationContext(), AddActivity.class);
-                        startActivity(Intent);
                         Intent.putExtra("Array", carArray);
-
+                        startActivity(Intent);
                         break;
                     case R.id.Modify2:
                         Intent = new Intent(getApplicationContext(), ModifyActivity.class);
@@ -68,22 +62,17 @@ public class ModifyActivity extends Cars {
                         startActivity(Intent);
                         break;
                     case R.id.submit:
-                        Intent intent = submitting();
-                        intent.putExtra("Current", currentCar);
-                        intent.putExtra("Array", carArray);
-                        startActivity(intent);
+                        carArray.set(carArray.indexOf(currentCar), submitting());
                         break;
                     case R.id.BackToView:
                         Intent = new Intent(getApplicationContext(), ViewActivity.class);
                         Intent.putExtra("Current", currentCar);
                         Intent.putExtra("Array", carArray);
-
                         startActivity(Intent);
                         break;
                     default:
                         Snackbar.make(view, "unknown item selected", Snackbar.LENGTH_LONG).show();
                 }
-
             }
         };
 
@@ -91,12 +80,12 @@ public class ModifyActivity extends Cars {
         Button Vehicles2 = findViewById(R.id.vehicleButton2);
         Button Add2 = findViewById(R.id.Add2);
         Button Modify2 = findViewById(R.id.Modify2);
-
         Button View2 = findViewById(R.id.BackToView);
 
+        Button submit = findViewById(R.id.submit);
+        submit.setOnClickListener(onClickListener);
 
         View2.setOnClickListener(onClickListener);
-
         Vehicles2.setOnClickListener(onClickListener);
         Add2.setOnClickListener(onClickListener);
         Modify2.setOnClickListener(onClickListener);
@@ -104,14 +93,21 @@ public class ModifyActivity extends Cars {
 
     }
 
-    private Intent submitting() {
+
+    private Cars submitting() {
         EditText editText = findViewById(R.id.CarName);
         EditText editCompany = findViewById(R.id.CarCompany);
         CheckBox simpleCheckBox = (CheckBox) findViewById(R.id.available);
-        Button submit = (Button) findViewById(R.id.submit);
 
-        currentCar.setCarName(editText.getText().toString());
-        currentCar.setCarCompany(editCompany.getText().toString());
+        String cname = editText.getText().toString();
+        String cmp = editCompany.getText().toString();
+        currentCar.setCarName(cname);
+        currentCar.setCarCompany(cmp);
+        boolean check = simpleCheckBox.isChecked();
+
+        Cars newCar = new Cars(cname, cmp, check);
+
+        Button submit = (Button) findViewById(R.id.submit);
 
         TextView textView = findViewById(R.id.CurrentName);
         textView.setText(currentCar.getCarName());
@@ -132,10 +128,6 @@ public class ModifyActivity extends Cars {
         } else {
             currentCar.setIsAvailable(false);
         }
-        Intent intent = new Intent(getApplicationContext(), ViewActivity.class);
-        return intent;
-
-
-
+        return newCar;
     }
 }

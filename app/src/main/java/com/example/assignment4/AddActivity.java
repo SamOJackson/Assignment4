@@ -76,6 +76,8 @@ public class AddActivity extends Cars {
         Button Modify3 = findViewById(R.id.modify);
         Button View2 = findViewById(R.id.backToView);
 
+        Button submit = findViewById(R.id.submit2);
+        submit.setOnClickListener(onClickListener);
 
         View2.setOnClickListener(onClickListener);
 
@@ -87,11 +89,11 @@ public class AddActivity extends Cars {
     }
 
     private Cars Submitting() {
+
         EditText addText = findViewById(R.id.carName2);
         EditText addCompany = findViewById(R.id.carCompany2);
         CheckBox simpleCheckBox2 = (CheckBox) findViewById(R.id.available3);
         Button submit = (Button) findViewById(R.id.submit2);
-
 
         String carName = addText.getText().toString();
         String carCompany = addCompany.getText().toString();
@@ -106,6 +108,5 @@ public class AddActivity extends Cars {
         Cars addCar = new Cars(carName, carCompany, available);
         currentCar = addCar;
         return currentCar;
-
     }
 }

@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Assignment4</string>
-    <string name="carName1"></string>
-    <string name="carName2"></string>
+    <string name="carName1">Vehicles</string>
+    <string name="buttonName">Modify</string>
     <string name="carName3"></string>
     <string name="carName4"></string>
     <string name="carName5"></string>
@@ -9,7 +9,9 @@
     <string name="carName7"></string>
     <string name="carName8"></string>
     <string name="carName9"></string>
+    <string name="buttonName2">Car Name</string>
     <string name="Images"></string>
+    <string name="add">Add</string>
     <string name="currentCar"></string>
     <string name="main_menu_item1">View Info</string>
     <string name="main_menu_item2">Add Details</string>

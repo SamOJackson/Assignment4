@@ -13,7 +13,7 @@
         android:layout_marginStart="160dp"
         android:layout_marginTop="16dp"
         android:backgroundTint="#CFCCCC"
-        android:text="Vehicles"
+        android:text="@string/carName1"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -32,20 +32,17 @@
             <ImageView
                 android:id="@+id/Vehicle1"
                 android:layout_width="148dp"
-                android:layout_height="148dp"
-                app:srcCompat="@drawable/redcar" />
+                android:layout_height="148dp" />
 
             <ImageView
                 android:id="@+id/Vehicle2"
                 android:layout_width="148dp"
-                android:layout_height="148dp"
-                app:srcCompat="@drawable/yellowcar" />
+                android:layout_height="148dp" />
 
             <ImageView
                 android:id="@+id/Vehicle3"
                 android:layout_width="148dp"
-                android:layout_height="148dp"
-                app:srcCompat="@drawable/carscar" />
+                android:layout_height="148dp" />
         </TableRow>
 
         <TableRow
@@ -55,20 +52,17 @@
             <ImageView
                 android:id="@+id/Vehicle4"
                 android:layout_width="wrap_content"
-                android:layout_height="148dp"
-                tools:srcCompat="@tools:sample/avatars" />
+                android:layout_height="148dp" />
 
             <ImageView
                 android:id="@+id/Vehicle5"
                 android:layout_width="148dp"
-                android:layout_height="148dp"
-                tools:srcCompat="@tools:sample/avatars" />
+                android:layout_height="148dp" />
 
             <ImageView
                 android:id="@+id/Vehicle6"
                 android:layout_width="148dp"
-                android:layout_height="148dp"
-                tools:srcCompat="@tools:sample/avatars" />
+                android:layout_height="148dp" />
         </TableRow>
 
         <TableRow
@@ -78,20 +72,17 @@
             <ImageView
                 android:id="@+id/Vehicle7"
                 android:layout_width="148dp"
-                android:layout_height="148dp"
-                tools:srcCompat="@tools:sample/avatars" />
+                android:layout_height="148dp" />
 
             <ImageView
                 android:id="@+id/Vehicle8"
                 android:layout_width="148dp"
-                android:layout_height="148dp"
-                tools:srcCompat="@tools:sample/avatars" />
+                android:layout_height="148dp" />
 
             <ImageView
                 android:id="@+id/Vehicle9"
                 android:layout_width="148dp"
-                android:layout_height="148dp"
-                tools:srcCompat="@tools:sample/avatars" />
+                android:layout_height="148dp" />
         </TableRow>
 
         <TableRow
