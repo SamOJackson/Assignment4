@@ -2,6 +2,7 @@ package com.example.assignment4;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
@@ -22,48 +23,15 @@ public class ViewActivity extends Cars{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view);
-        carArray = MainActivity.getArray();
 
-        Cars currentCar = carArray.get(getVehicleId());
+        currentCar = (Cars) getIntent().getSerializableExtra("Current");
 
-//        switch(current) {
-//            case 1: {
-//                ImageView vehicle1View = findViewById(R.id.vehicle);
-//                vehicle1View.setVisibility(View.VISIBLE);
-//                break;
-//            }
-//            case 2: {
-//                ImageView vehicle1View = findViewById(R.id.vehicle2);
-//                vehicle1View.setVisibility(View.VISIBLE);
-//                break;
-//            }
-//            case 3: {
-//                ImageView vehicle1View = findViewById(R.id.vehicle3);
-//                vehicle1View.setVisibility(View.VISIBLE);
-//                break;
-//            }
-//            case 4: {
-//                ImageView vehicle1View = findViewById(R.id.vehicle4);
-//                vehicle1View.setVisibility(View.VISIBLE);
-//                break;
-//            }
-//            case 5: {
-//                ImageView vehicle1View = findViewById(R.id.vehicle5);
-//                vehicle1View.setVisibility(View.VISIBLE);
-//
-//                break;
-//            }
-//            case 6: {
-//                ImageView vehicle1View = findViewById(R.id.vehicle6);
-//                vehicle1View.setVisibility(View.VISIBLE);
-//                break;
-//            }
-//            default:
-//        }
+
+        ImageView vehicleView;
 
         ImageView Images = findViewById(R.id.Images);
-        Drawable currentImage = Drawable.createFromPath(currentCar.getCarCompany());
-        Images.setImageDrawable(currentImage);
+        Drawable drawable = Drawable.createFromPath(currentCar.getCarImageName());
+        Images.setImageDrawable(drawable);
         TextView textView = findViewById(R.id.companyText);
         textView.setText(currentCar.getCarCompany());
         TextView textView2 = findViewById(R.id.isAvailable2);
@@ -78,9 +46,6 @@ public class ViewActivity extends Cars{
         textView2.setText(text);
         TextView details = findViewById(R.id.Details2);
         details.setText(currentCar.getCarName());
-
-
-
 
         View.OnClickListener onClickListener = new View.OnClickListener() {
             @Override

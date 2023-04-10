@@ -1,21 +1,27 @@
 package com.example.assignment4;
 
+
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 
 import androidx.appcompat.app.AppCompatActivity;
-import java.nio.file.Path;
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Cars extends AppCompatActivity {
-    static ArrayList<Cars> carArray = new ArrayList<Cars>();
+public class Cars extends AppCompatActivity implements Serializable{
+    private ArrayList<Cars> carArray = new ArrayList<>();
     private int carId;
     private String carImageName;
     private String carCompany;
     private boolean isAvailable;
     private String carName;
-    private int vehicleId;
+    public int vehicleId;
+    public static Cars currentCar;
+    private final String redCarImage = "![](../../../../res/drawable/redcar.png)";
+    private final String yellowCarImage = "![](../../../../res/drawable/yellowcar.jpg)";
+    private final String carsCarImage = "![](../../../../res/drawable/carscar.jpg)";
     public int getVehicleId() {
         return vehicleId;
     }
@@ -24,26 +30,65 @@ public class Cars extends AppCompatActivity {
         this.vehicleId = vehicleId;
     }
 
-    String redCarPath = "/./././res/drawable/redcar.png";
-    String yellowCarPath = "/./././res/drawable/yellowcar.jpg";
-    String carsCarPath = "/./././res/drawable/carscar.jpg";
-
     public Cars() {
     }
 
 
-    public Cars(String carName, String carImageName, String carCompany) {
+    public Cars(String carName, String carCompany, boolean isAvailable) {
         this.carName = carName;
-        this.carImageName = carImageName;
         this.carCompany = carCompany;
+        if (carName.equals("Red Car")) {
+            carImageName = redCarImage;
+        }
+        if (carName.equals("Yellow Car")) {
+            carImageName = yellowCarImage;
+        }
+        if (carName.equals("Cars Car")) {
+            carImageName = carsCarImage;
+        }
+        if(carName.equals("Redder Car")) {
+            carImageName = redCarImage;
+        }
+        if(carName.equals("Yellower Car")){
+            carImageName = yellowCarImage;
+        }
+        if(carName.equals("Carser Car")){
+//            ImageView carscar = findViewById(R.id.yellowcar2);
+//            Drawable carscardrawable = carscar.;
+//            this.carImageName = carscardrawable;
+//            carImageName = "/../../../../res/drawable/carscar.jpg/";
+            carImageName = redCarImage;
+        }
     }
 
 
     public Cars(String carName, int carId, String carImageName, String carCompany) {
         this.carName = carName;
         this.carId = carId;
-        this.carImageName = carImageName;
         this.carCompany = carCompany;
+        if (carName.equals("Red Car")) {
+            carImageName = redCarImage;
+        }
+        if (carName.equals("Yellow Car")) {
+            carImageName = yellowCarImage;
+        }
+        if (carName.equals("Cars Car")) {
+            carImageName = carsCarImage;
+        }
+        if(carName.equals("Redder Car")) {
+            carImageName = redCarImage;
+        }
+        if(carName.equals("Yellower Car")){
+            carImageName = yellowCarImage;
+        }
+        if(carName.equals("Carser Car")){
+//            ImageView carscar = findViewById(R.id.yellowcar2);
+//            Drawable carscardrawable = carscar.;
+//            this.carImageName = carscardrawable;
+//            carImageName = "/../../../../res/drawable/carscar.jpg/";
+            carImageName = redCarImage;
+        }
+        this.carImageName = carImageName;
     }
 
     public String getCarName() {
@@ -55,7 +100,6 @@ public class Cars extends AppCompatActivity {
     }
 
     public String getCarImageName() {
-
         return carImageName;
     }
 
@@ -71,9 +115,52 @@ public class Cars extends AppCompatActivity {
     public Cars(String carName, int carId, String carImageName, String carCompany, boolean isAvailable) {
         this.carName = carName;
         this.carId = carId;
-        this.carImageName = carImageName;
         this.carCompany = carCompany;
         this.isAvailable = isAvailable;
+//        if(carName.equals("Red Car")) {
+//            carImageName = "/../../../../res/drawable/redcar.png";
+//        }
+//        if(carName.equals("Yellow Car")){
+//            carImageName =  "/../../../../res/drawable/yellowcar.jpg";
+//        }
+//        if(carName.equals("Cars Car")) {
+//            carImageName = "/../../../../res/drawable/carscar.jpg";
+//        }
+//        if(carName.equals("Redder Car")) {
+//            carImageName = "/../../../../res/drawable/redcar.png/";
+//        }
+//        if(carName.equals("Yellower Car")){
+//            carImageName =  "/../../../../res/drawable/yellowcar.jpg/";
+//        }
+//        if(carName.equals("Carser Car")){
+////            ImageView carscar = findViewById(R.id.yellowcar2);
+////            Drawable carscardrawable = carscar.;
+////            this.carImageName = carscardrawable;
+//            carImageName = "/../../../../res/drawable/carscar.jpg/";
+//        }
+        if (carName.equals("Red Car")) {
+            carImageName = redCarImage;
+        }
+        if (carName.equals("Yellow Car")) {
+            carImageName = yellowCarImage;
+        }
+        if (carName.equals("Cars Car")) {
+            carImageName = carsCarImage;
+        }
+        if(carName.equals("Redder Car")) {
+            carImageName = redCarImage;
+        }
+        if(carName.equals("Yellower Car")){
+            carImageName = yellowCarImage;
+        }
+        if(carName.equals("Carser Car")){
+//            ImageView carscar = findViewById(R.id.yellowcar2);
+//            Drawable carscardrawable = carscar.;
+//            this.carImageName = carscardrawable;
+//            carImageName = "/../../../../res/drawable/carscar.jpg/";
+            carImageName = redCarImage;
+        }
+        this.carImageName = carImageName;
     }
 
     public void setCarName(String carName) {
@@ -84,7 +171,30 @@ public class Cars extends AppCompatActivity {
         this.carId = carId;
     }
 
-    public void setCarImageName(String carImageName) {
+    public void setCarImageName(String carName) {
+
+        if (carName.equals("Red Car")) {
+            carImageName = redCarImage;
+        }
+        if (carName.equals("Yellow Car")) {
+            carImageName = yellowCarImage;
+        }
+        if (carName.equals("Cars Car")) {
+            carImageName = carsCarImage;
+        }
+        if(carName.equals("Redder Car")) {
+            carImageName = redCarImage;
+        }
+        if(carName.equals("Yellower Car")){
+            carImageName = yellowCarImage;
+        }
+        if(carName.equals("Carser Car")){
+//            ImageView carscar = findViewById(R.id.yellowcar2);
+//            Drawable carscardrawable = carscar.;
+//            this.carImageName = carscardrawable;
+//            carImageName = "/../../../../res/drawable/carscar.jpg/";
+            carImageName = redCarImage;
+        }
         this.carImageName = carImageName;
     }
 
@@ -106,19 +216,15 @@ public class Cars extends AppCompatActivity {
 
         return true;
     }
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        createArray();
-    }
     public void createArray() {
-        carArray = new ArrayList<Cars>();
-        Cars car1 = new Cars("Red Car", "/res/drawable/redcar.png", "Red Car Company");
-        Cars car2 = new Cars("Yellow Car", "/res/drawable/yellowcar.jpg", "Yellow Car Company");
-        Cars car3 = new Cars("Cars Car", "/res/drawable/yellowcar.jpg", "Cars Car Company");
-        Cars car4 = new Cars("Redder Car", "/res/drawable/redcar.png", "Redder Car Company");
-        Cars car5 = new Cars("Yellower Car", "/res/drawable/yellowcar.jpg", "Yellower Car Company");
-        Cars car6 = new Cars("Carser Car", "/res/drawable/yellowcar.jpg", "Carser Car Company");
+
+        carArray = new ArrayList<>();
+        Cars car1 = new Cars("Red Car", "Red Car Company", true);
+        Cars car2 = new Cars("Yellow Car", "Yellow Car Company", true);
+        Cars car3 = new Cars("Cars Car", "Cars Car Company", true);
+        Cars car4 = new Cars("Redder Car","Redder Car Company", false);
+        Cars car5 = new Cars("Yellower Car", "Yellower Car Company", false);
+        Cars car6 = new Cars("Carser Car", "Carser Car Company", false);
 
         carArray.add(car1);
         carArray.add(car2);
@@ -127,7 +233,20 @@ public class Cars extends AppCompatActivity {
         carArray.add(car5);
         carArray.add(car6);
     }
-    public static ArrayList<Cars> getArray(){
+    public ArrayList<Cars> getArray(){
         return carArray;
     }
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+        createArray();
+        Intent intent;
+
+        intent = new Intent(getApplicationContext(), getClass());
+        intent.putExtra("Array", carArray);
+        startActivity(intent);
+    }
+
 }
