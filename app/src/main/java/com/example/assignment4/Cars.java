@@ -1,17 +1,20 @@
 package com.example.assignment4;
 
 
-import android.content.Intent;
+
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 
 import androidx.appcompat.app.AppCompatActivity;
+
 import java.io.Serializable;
 import java.util.ArrayList;
 
 public class Cars extends AppCompatActivity implements Serializable{
     private ArrayList<Cars> carArray = new ArrayList<>();
+
+    private final String filename = "myfile";
     private int carId;
     private String carImageName;
     private String carCompany;
@@ -216,6 +219,8 @@ public class Cars extends AppCompatActivity implements Serializable{
 
         return true;
     }
+
+
     public ArrayList<Cars> createArray() {
 
         carArray = new ArrayList<>();

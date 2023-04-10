@@ -27,9 +27,6 @@
             android:name=".ModifyActivity"
             android:exported="false" />
         <activity
-            android:name=".EditActivity"
-            android:exported="false" />
-        <activity
             android:name=".AddActivity"
             android:exported="false" />
         <activity
