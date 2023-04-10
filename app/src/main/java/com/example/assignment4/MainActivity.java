@@ -3,11 +3,15 @@ package com.example.assignment4;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 
 import com.google.android.material.snackbar.Snackbar;
 
+import java.io.IOError;
+import java.io.IOException;
+import java.io.Serializable;
 import java.nio.file.attribute.AttributeView;
 import java.security.KeyStore;
 import java.util.ArrayList;
@@ -20,50 +24,57 @@ public class MainActivity extends Cars {
         setContentView(R.layout.activity_main);
 
         createArray();
-        Drawable[] drawable = new Drawable[carArray.size() + 9];
+        Drawable drawable;
         int i = 0;
-        //int i = 1;
-        for (Cars c: carArray) {
-            drawable[i] = Drawable.createFromPath(c.getCarImageName());
-            i++;
-        }
-        if (carArray.size() >= 1) {
-            ImageView vehicle1 = findViewById(R.id.Vehicle1);
-            //vehicle1.setImageDrawable(drawable[0]);
-        }
-        if(carArray.size() >= 2) {
-            ImageView vehicle2 = findViewById(R.id.Vehicle2);
-            //vehicle2.setImageDrawable(drawable[1]);
-        }
-        if(carArray.size() >= 3) {
-            ImageView vehicle3 = findViewById(R.id.Vehicle3);
-            //vehicle3.setImageDrawable(drawable[2]);
-        }
-        if(carArray.size() >= 4) {
-            ImageView vehicle4 = findViewById(R.id.Vehicle4);
-            //vehicle4.setImageDrawable(drawable[4]);
-        }
-        if(carArray.size() >= 5) {
-            ImageView vehicle5 = findViewById(R.id.Vehicle5);
-            //vehicle5.setImageDrawable(drawable[5]);
-        }
-        if(carArray.size() >= 6) {
-            ImageView vehicle6 = findViewById(R.id.Vehicle6);
-            //vehicle6.setImageDrawable(drawable[6]);
-        }
-        if(carArray.size() >= 7) {
-            ImageView vehicle7 = findViewById(R.id.Vehicle7);
-            //vehicle7.setImageDrawable(drawable[7]);
-        }
-        if(carArray.size() >= 8) {
-            ImageView vehicle8 = findViewById(R.id.Vehicle8);
-            //vehicle8.setImageDrawable(drawable[8]);
-        }
-        if (carArray.size() >= 9) {
-            ImageView vehicle9 = findViewById(R.id.Vehicle9);
-            //vehicle9.setImageDrawable(drawable[9]);
-        }
 
+        for (Cars c: carArray) {
+           if (i == 0) {
+                ImageView vehicle1 = findViewById(R.id.Vehicle1);
+                drawable = Drawable.createFromPath(c.getCarImageName());
+                vehicle1.setImageDrawable(drawable);
+           }
+           if (i == 1) {
+                ImageView vehicle2 = findViewById(R.id.Vehicle2);
+                drawable = Drawable.createFromPath(c.getCarImageName());
+                vehicle2.setImageDrawable(drawable);
+           }
+           if (i == 2) {
+                ImageView vehicle3 = findViewById(R.id.Vehicle3);
+                drawable = Drawable.createFromPath(c.getCarImageName());
+                vehicle3.setImageDrawable(drawable);
+           }
+           if (i == 3) {
+                ImageView vehicle4 = findViewById(R.id.Vehicle4);
+                drawable = Drawable.createFromPath(c.getCarImageName());
+                vehicle4.setImageDrawable(drawable);
+           }
+           if (i == 4) {
+                ImageView vehicle5 = findViewById(R.id.Vehicle5);
+                drawable = Drawable.createFromPath(c.getCarImageName());
+                vehicle5.setImageDrawable(drawable);
+           }
+           if (i == 5) {
+                ImageView vehicle6 = findViewById(R.id.Vehicle6);
+                drawable = Drawable.createFromPath(c.getCarImageName());
+                vehicle6.setImageDrawable(drawable);
+           }
+           if (i == 6) {
+                ImageView vehicle7 = findViewById(R.id.Vehicle7);
+                drawable = Drawable.createFromPath(c.getCarImageName());
+                vehicle7.setImageDrawable(drawable);
+           }
+           if (i == 7) {
+                ImageView vehicle8 = findViewById(R.id.Vehicle8);
+                drawable = Drawable.createFromPath(c.getCarImageName());
+                vehicle8.setImageDrawable(drawable);
+           }
+           if (i == 8) {
+                ImageView vehicle9 = findViewById(R.id.Vehicle9);
+                drawable = Drawable.createFromPath(c.getCarImageName());
+                vehicle9.setImageDrawable(drawable);
+           }
+           i++;
+        }
 
         View.OnClickListener onClickListener = new View.OnClickListener() {
             @Override
@@ -72,7 +83,6 @@ public class MainActivity extends Cars {
                 int selectedItemId = view.getId();
                 Intent Intent;
 
-                //Button which = findViewById(selectedItemId);
                 Snackbar.make(view, "Hello", Snackbar.LENGTH_LONG).show();
                 switch (selectedItemId){
                     case R.id.VehicleButton:
@@ -81,39 +91,67 @@ public class MainActivity extends Cars {
                         break;
                     case R.id.Vehicle1:
                         Intent = new Intent(getApplicationContext(), ViewActivity.class);
-                        setVehicleId(1);
+                        Intent.putExtra("Id", 1);
+                        currentCar = carArray.get(0);
+                        Intent.putExtra("Current", currentCar);
+
                         startActivity(Intent);
                     case R.id.Vehicle2:
                         Intent = new Intent(getApplicationContext(), ViewActivity.class);
-                        setVehicleId(2);
+                        Intent.putExtra("Id", 2);
+                        currentCar = carArray.get(1);
+                        Intent.putExtra("Current", currentCar);
                         startActivity(Intent);
                     case R.id.Vehicle3:
                         Intent = new Intent(getApplicationContext(), ViewActivity.class);
-                        setVehicleId(3);
-                        startActivity(Intent);
+                        Intent.putExtra("Id", 3);
+                        currentCar = carArray.get(2);
+                        Intent.putExtra("Current", currentCar);                        startActivity(Intent);
                     case R.id.Vehicle4:
                         Intent = new Intent(getApplicationContext(), ViewActivity.class);
-                        setVehicleId(4);
+                        Intent.putExtra("Id", 4);
+                        currentCar = carArray.get(3);
+                        Intent.putExtra("Current", currentCar);
+
                         startActivity(Intent);
                     case R.id.Vehicle5:
                         Intent = new Intent(getApplicationContext(), ViewActivity.class);
-                        setVehicleId(5);
+                        Intent.putExtra("Id", 5);
+                        currentCar = carArray.get(4);
+
+                        Intent.putExtra("Current", currentCar);
+
                         startActivity(Intent);
                     case R.id.Vehicle6:
                         Intent = new Intent(getApplicationContext(), ViewActivity.class);
-                        setVehicleId(6);
+                        Intent.putExtra("Id", 6);
+                        currentCar = carArray.get(5);
+
+                        Intent.putExtra("Current", currentCar);
+
                         startActivity(Intent);
                     case R.id.Vehicle7:
                         Intent = new Intent(getApplicationContext(), ViewActivity.class);
-                        setVehicleId(7);
+                        Intent.putExtra("Id", 7);
+                        currentCar = carArray.get(6);
+
+                        Intent.putExtra("Current", currentCar);
+
                         startActivity(Intent);
                     case R.id.Vehicle8:
                         Intent = new Intent(getApplicationContext(), ViewActivity.class);
-                        setVehicleId(8);
+                        Intent.putExtra("Id", 8);
+                        currentCar = carArray.get(7);
+
+                        Intent.putExtra("Current", currentCar);
+
                         startActivity(Intent);
                     case R.id.Vehicle9:
                         Intent = new Intent(getApplicationContext(), ViewActivity.class);
-                        setVehicleId(9);
+                        Intent.putExtra("Id", 9);
+                        currentCar = carArray.get(8);
+
+                        Intent.putExtra("Current", currentCar);
                         startActivity(Intent);
 
                     default:

@@ -31,20 +31,20 @@
 
             <ImageView
                 android:id="@+id/Vehicle1"
-                android:layout_width="130dp"
-                android:layout_height="130dp"
+                android:layout_width="148dp"
+                android:layout_height="148dp"
                 app:srcCompat="@drawable/redcar" />
 
             <ImageView
                 android:id="@+id/Vehicle2"
-                android:layout_width="130dp"
-                android:layout_height="130dp"
+                android:layout_width="148dp"
+                android:layout_height="148dp"
                 app:srcCompat="@drawable/yellowcar" />
 
             <ImageView
                 android:id="@+id/Vehicle3"
-                android:layout_width="130dp"
-                android:layout_height="130dp"
+                android:layout_width="148dp"
+                android:layout_height="148dp"
                 app:srcCompat="@drawable/carscar" />
         </TableRow>
 
@@ -55,19 +55,19 @@
             <ImageView
                 android:id="@+id/Vehicle4"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="148dp"
                 tools:srcCompat="@tools:sample/avatars" />
 
             <ImageView
                 android:id="@+id/Vehicle5"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="148dp"
+                android:layout_height="148dp"
                 tools:srcCompat="@tools:sample/avatars" />
 
             <ImageView
                 android:id="@+id/Vehicle6"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="148dp"
+                android:layout_height="148dp"
                 tools:srcCompat="@tools:sample/avatars" />
         </TableRow>
 
@@ -77,20 +77,20 @@
 
             <ImageView
                 android:id="@+id/Vehicle7"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="148dp"
+                android:layout_height="148dp"
                 tools:srcCompat="@tools:sample/avatars" />
 
             <ImageView
                 android:id="@+id/Vehicle8"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="148dp"
+                android:layout_height="148dp"
                 tools:srcCompat="@tools:sample/avatars" />
 
             <ImageView
                 android:id="@+id/Vehicle9"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="148dp"
+                android:layout_height="148dp"
                 tools:srcCompat="@tools:sample/avatars" />
         </TableRow>
 
