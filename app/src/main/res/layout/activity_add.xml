@@ -4,14 +4,58 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AddActivity">
+    tools:context=".AddActivity"
+    tools:layout_editor_absoluteX="0dp"
+    tools:layout_editor_absoluteY="66dp">
+
+    <EditText
+        android:id="@+id/addPrice"
+        android:layout_width="255dp"
+        android:layout_height="65dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="@string/carPrice"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.333"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.379" />
+
+    <EditText
+        android:id="@+id/addYear"
+        android:layout_width="255dp"
+        android:layout_height="65dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="@string/carYear"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.333"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.273" />
+
+    <EditText
+        android:id="@+id/addCylinder"
+        android:layout_width="255dp"
+        android:layout_height="65dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="@string/carCylinders"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.333"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.477" />
 
     <Button
         android:id="@+id/backToView"
         android:layout_width="107dp"
         android:layout_height="64dp"
         android:backgroundTint="#FFDADA"
-        android:text="Back To VIew"
+        android:text="@string/backToView"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -22,9 +66,9 @@
         android:id="@+id/available3"
         android:layout_width="243dp"
         android:layout_height="48dp"
-        android:layout_marginStart="60dp"
-        android:layout_marginBottom="360dp"
-        android:text="Available"
+        android:layout_marginStart="64dp"
+        android:layout_marginBottom="300dp"
+        android:text="@string/Available"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -32,10 +76,10 @@
         android:id="@+id/vehicleButton3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="152dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginStart="144dp"
+        android:layout_marginTop="4dp"
         android:backgroundTint="#CFCCCC"
-        android:text="Vehicles"
+        android:text="@string/carName1"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -44,7 +88,7 @@
         android:layout_width="107dp"
         android:layout_height="64dp"
         android:backgroundTint="#FFDADA"
-        android:text="Add"
+        android:text="@string/add"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -56,7 +100,7 @@
         android:layout_width="107dp"
         android:layout_height="69dp"
         android:backgroundTint="#FFDADA"
-        android:text="Modify"
+        android:text="@string/Modify"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -69,39 +113,39 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
-        android:text="submit"
+        android:text="@string/Submit"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.188"
+        app:layout_constraintHorizontal_bias="0.049"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.547" />
+        app:layout_constraintVertical_bias="0.755" />
 
     <EditText
         android:id="@+id/carCompany2"
-        android:layout_width="252dp"
-        android:layout_height="75dp"
+        android:layout_width="255dp"
+        android:layout_height="65dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Car Company"
+        android:text="@string/company"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.383"
+        app:layout_constraintHorizontal_bias="0.333"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.367" />
+        app:layout_constraintVertical_bias="0.175" />
 
     <EditText
         android:id="@+id/carName2"
-        android:layout_width="250dp"
-        android:layout_height="75dp"
+        android:layout_width="255dp"
+        android:layout_height="65dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Car Name"
+        android:text="@string/buttonName2"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.378"
+        app:layout_constraintHorizontal_bias="0.333"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.253" />
+        app:layout_constraintVertical_bias="0.078" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -39,6 +39,14 @@ public class ModifyActivity extends Cars {
         TextView details = findViewById(R.id.CurrentCompany2);
         details.setText(currentCar.getCarCompany());
 
+        TextView year = findViewById(R.id.modifyYear);
+        year.setText(currentCar.getYear());
+        TextView cylinder = findViewById(R.id.modifyCylinder);
+        cylinder.setText(currentCar.getCylinders());
+        TextView price = findViewById(R.id.modifyPrice);
+        price.setText(currentCar.getPrice());
+
+
         View.OnClickListener onClickListener = new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -54,6 +62,7 @@ public class ModifyActivity extends Cars {
                     case R.id.Add2:
                         Intent = new Intent(getApplicationContext(), AddActivity.class);
                         Intent.putExtra("Array", carArray);
+                        Intent.putExtra("Current", currentCar);
                         startActivity(Intent);
                         break;
                     case R.id.Modify2:
@@ -93,24 +102,49 @@ public class ModifyActivity extends Cars {
 
     }
 
-
     private Cars submitting() {
         EditText editText = findViewById(R.id.CarName);
         EditText editCompany = findViewById(R.id.CarCompany);
+        EditText ModifyYear = findViewById(R.id.modifyYear2);
+        EditText ModifyPrice = findViewById(R.id.modifyPrice2);
+        EditText ModifyCylinder = findViewById(R.id.modifyCylinder2);
+
         CheckBox simpleCheckBox = (CheckBox) findViewById(R.id.available);
 
         String cname = editText.getText().toString();
         String cmp = editCompany.getText().toString();
-        currentCar.setCarName(cname);
-        currentCar.setCarCompany(cmp);
+        String mYearString = ModifyYear.getText().toString();
+        int mYear = Integer.parseInt(mYearString);
+        String mPriceString = ModifyPrice.getText().toString();
+        int mPrice = Integer.parseInt(mPriceString);
+        float priceM = mPrice;
+        String mCylinderString = ModifyCylinder.getText().toString();
+        int mCylinder = Integer.parseInt(mCylinderString);
         boolean check = simpleCheckBox.isChecked();
 
-        Cars newCar = new Cars(cname, cmp, check);
+
+        currentCar.setCarName(cname);
+        currentCar.setCarCompany(cmp);
+        currentCar.setYear(mYear);
+        currentCar.setPrice(mPrice);
+        currentCar.setCylinders(mCylinder);
+        currentCar.setIsAvailable(check);
+
+//        Cars newCar = new Cars(cname, cmp, check);
+        Cars newCarfull = new Cars(cmp, mCylinder, mYear, priceM, check, cname);
 
         Button submit = (Button) findViewById(R.id.submit);
 
         TextView textView = findViewById(R.id.CurrentName);
         textView.setText(currentCar.getCarName());
+        TextView cylinder = findViewById(R.id.modifyCylinder);
+        cylinder.setText(currentCar.getCylinders());
+        TextView price = findViewById(R.id.modifyPrice);
+        price.setText(currentCar.getPrice());
+        TextView year = findViewById(R.id.modifyYear);
+        year.setText(currentCar.getYear());
+
+
         TextView textView2 = findViewById(R.id.available2);
         String text;
         if (!currentCar.getIsAvailable()) {
@@ -128,6 +162,8 @@ public class ModifyActivity extends Cars {
         } else {
             currentCar.setIsAvailable(false);
         }
-        return newCar;
+//        return newCar;
+//        currentCar = newCarfull;
+        return newCarfull;
     }
 }

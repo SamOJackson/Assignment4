@@ -31,6 +31,7 @@ public class ViewActivity extends Cars{
         ImageView Images = findViewById(R.id.Images);
         Drawable drawable = Drawable.createFromPath(currentCar.getCarImageName());
         Images.setImageDrawable(drawable);
+
         TextView textView = findViewById(R.id.companyText);
         textView.setText(currentCar.getCarCompany());
         TextView textView2 = findViewById(R.id.isAvailable2);
@@ -46,6 +47,15 @@ public class ViewActivity extends Cars{
         TextView details = findViewById(R.id.Details2);
         details.setText(currentCar.getCarName());
 
+
+        TextView year = findViewById(R.id.year);
+        year.setText(currentCar.getYear());
+        TextView cylinder = findViewById(R.id.Cylinders);
+        cylinder.setText(currentCar.getCylinders());
+
+        TextView price = findViewById(R.id.price);
+        price.setText( currentCar.getPrice());
+
         View.OnClickListener onClickListener = new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -59,30 +69,20 @@ public class ViewActivity extends Cars{
                         break;
                     case R.id.Add:
                         Intent = new Intent(getApplicationContext(), AddActivity.class);
+
+                        Intent.putExtra("Current", currentCar);
+                        Intent.putExtra("Array", carArray);
                         startActivity(Intent);
                         break;
                     case R.id.Modify:
                         Intent = new Intent(getApplicationContext(), ModifyActivity.class);
                         Intent.putExtra("Current", currentCar);
+                        Intent.putExtra("Array", carArray);
                         startActivity(Intent);
                         break;
                     default:
                         Snackbar.make(view, "unknown item selected", Snackbar.LENGTH_LONG).show();
                 }
-                TextView textView = findViewById(R.id.companyText);
-                textView.setText(currentCar.getCarCompany());
-                TextView textView2 = findViewById(R.id.isAvailable2);
-                String text;
-                if(!currentCar.getIsAvailable())
-                {
-                    text = "Unavailable";
-                }
-                else{
-                    text = "Available";
-                }
-                textView2.setText(text);
-                TextView details = findViewById(R.id.Details2);
-                details.setText(currentCar.getCarName());
             }
         };
 

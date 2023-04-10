@@ -32,6 +32,12 @@ public class AddActivity extends Cars {
 
                 EditText addText = findViewById(R.id.carName2);
                 EditText addCompany = findViewById(R.id.carCompany2);
+
+                EditText addYear = findViewById(R.id.addYear);
+                EditText addPrice = findViewById(R.id.addPrice);
+
+                EditText addCylinder = findViewById(R.id.addCylinder);
+
                 CheckBox simpleCheckBox2 = (CheckBox) findViewById(R.id.available3);
                 Button submit = (Button) findViewById(R.id.submit2);
                 Intent Intent;
@@ -85,7 +91,6 @@ public class AddActivity extends Cars {
         Add3.setOnClickListener(onClickListener);
         Modify3.setOnClickListener(onClickListener);
 
-        currentCar = carArray.get(carArray.size());
     }
 
     private Cars Submitting() {
@@ -93,20 +98,27 @@ public class AddActivity extends Cars {
         EditText addText = findViewById(R.id.carName2);
         EditText addCompany = findViewById(R.id.carCompany2);
         CheckBox simpleCheckBox2 = (CheckBox) findViewById(R.id.available3);
-        Button submit = (Button) findViewById(R.id.submit2);
+        EditText addYear = findViewById(R.id.addYear);
+        EditText addPrice = findViewById(R.id.addPrice);
+        EditText addCylinder = findViewById(R.id.addCylinder);
+
 
         String carName = addText.getText().toString();
         String carCompany = addCompany.getText().toString();
-
+        String yearAdd = addYear.getText().toString();
+        String priceAdd = addPrice.getText().toString();
+        String CylinderAdd = addCylinder.getText().toString();
         boolean checkedBoxState = simpleCheckBox2.isChecked();
-        boolean available;
+        String available;
         if (checkedBoxState) {
-            available = true;
+            available = "Available";
         } else {
-            available = false;
+            available = "Unavailable";
         }
-        Cars addCar = new Cars(carName, carCompany, available);
-        currentCar = addCar;
-        return currentCar;
+//        Cars addCar = new Cars(carName, carCompany, available);
+        Cars addCar = new Cars(carCompany, Integer.parseInt(CylinderAdd), Integer.parseInt(yearAdd), Integer.parseInt(priceAdd), checkedBoxState, carName);
+
+//        currentCar = addCar;
+        return addCar;
     }
 }
