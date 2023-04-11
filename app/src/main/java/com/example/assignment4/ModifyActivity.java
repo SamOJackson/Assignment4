@@ -156,7 +156,7 @@ public class ModifyActivity extends Cars {
         int mYear = Integer.parseInt(mYearString);
         String mPriceString = ModifyPrice.getText().toString();
         int mPrice = Integer.parseInt(mPriceString);
-        float priceM = mPrice;
+//        float priceM = mPrice;
         String mCylinderString = ModifyCylinder.getText().toString();
         int mCylinder = Integer.parseInt(mCylinderString);
         boolean check = simpleCheckBox.isChecked();
@@ -170,7 +170,7 @@ public class ModifyActivity extends Cars {
         currentCar.setIsAvailable(check);
 
 //        Cars newCar = new Cars(cname, cmp, check);
-        Cars newCarfull = new Cars(cmp, mCylinder, mYear, priceM, check, cname);
+        Cars newCarfull = new Cars(cmp, mCylinder, mYear, mPrice, check, cname);
 
         Button submit = (Button) findViewById(R.id.submit);
 

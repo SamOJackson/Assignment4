@@ -14,6 +14,8 @@ import com.google.android.material.snackbar.Snackbar;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.TreeMap;
 
 
 public class ViewActivity extends Cars{
@@ -22,6 +24,8 @@ public class ViewActivity extends Cars{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view);
+
+        HashMap<String, Integer> carsSoldProfit = (HashMap<String, Integer>) getIntent().getSerializableExtra("PROFIT");
 
         currentCar = (Cars) getIntent().getSerializableExtra("Current");
         // ArrayList<Cars> carArray = (ArrayList<Cars>) getIntent().getSerializableExtra("Array");
@@ -91,6 +95,17 @@ public class ViewActivity extends Cars{
                         Intent.putExtra("BUNDLE",args);
                         startActivity(Intent);
                         break;
+                    case R.id.Buy:
+                        Intent = new Intent(getApplicationContext(), MainActivity2.class);
+                        Intent.putExtra("PROFIT",(Serializable) carsSoldProfit);
+
+                        Intent.putExtra("Current", currentCar);
+//                        Intent.putExtra("Array", carArray);
+                        args = new Bundle();
+                        args.putSerializable("ARRAYLIST",(Serializable)carArray);
+                        Intent.putExtra("BUNDLE",args);
+                        startActivity(Intent);
+                        break;
                     default:
                         Snackbar.make(view, "unknown item selected", Snackbar.LENGTH_LONG).show();
                 }
@@ -100,6 +115,10 @@ public class ViewActivity extends Cars{
         Button Vehicles = findViewById(R.id.vehicleButton);
         Button Add = findViewById(R.id.Add);
         Button Modify = findViewById(R.id.Modify);
+
+        Button Buy = findViewById(R.id.Buy);
+
+        Buy.setOnClickListener(onClickListener);
 
         Vehicles.setOnClickListener(onClickListener);
         Add.setOnClickListener(onClickListener);

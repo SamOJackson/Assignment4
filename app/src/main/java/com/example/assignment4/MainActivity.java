@@ -5,6 +5,7 @@ import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
 
@@ -12,6 +13,8 @@ import com.google.android.material.snackbar.Snackbar;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.TreeMap;
 
 public class MainActivity extends Cars {
 
@@ -20,23 +23,20 @@ public class MainActivity extends Cars {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
 //        ArrayList<Cars> carArray2 = (ArrayList<Cars>) getIntent().getSerializableExtra("Array");
         currentCar = (Cars) getIntent().getSerializableExtra("Current");
+        ArrayList<Cars> carArray = createArray();
+        HashMap<String, Integer> carsSoldProfit = new HashMap<>();
 
-//        Intent intent = getIntent();
-//        Bundle args = intent.getBundleExtra("BUNDLE");
-//        ArrayList<Cars> carArray = (ArrayList<Cars>) args.getSerializable("ARRAYLIST");
+        carsSoldProfit.put("CarsSold", 0);
+        carsSoldProfit.put("Profit", 0);
 
-//        Intent intent;
         Drawable drawable;
-//        int i = 0;
-        ArrayList<Cars> carArray = new ArrayList<>();
-        if(!carArray.isEmpty()) {
-            Intent intent = getIntent();
-            Bundle args = intent.getBundleExtra("BUNDLE");
+        Intent intent = getIntent();
+        Bundle args = intent.getBundleExtra("BUNDLE");
+        if(!(args == null)) {
             carArray = (ArrayList<Cars>) args.getSerializable("ARRAYLIST");
-        }else{
-            carArray = createArray();
         }
 //        for (Cars c: carArray) {
          for(int i = 0; i < carArray.size(); i ++ ) {
@@ -110,10 +110,11 @@ public class MainActivity extends Cars {
                             break;
                         case R.id.Vehicle1:
                             Intent = new Intent(getApplicationContext(), ViewActivity.class);
-                            Intent.putExtra("Id", 1);
+//                            Intent.putExtra("Id", 1);
                             currentCar = finalCarArray.get(0);
                             Intent.putExtra("Current", currentCar);
 //                            Intent.putExtra("Array", carArray);
+                            Intent.putExtra("PROFIT",(Serializable) carsSoldProfit);
 
                             args = new Bundle();
                             args.putSerializable("ARRAYLIST",(Serializable) finalCarArray);
@@ -121,10 +122,11 @@ public class MainActivity extends Cars {
                             startActivity(Intent);
                         case R.id.Vehicle2:
                             Intent = new Intent(getApplicationContext(), ViewActivity.class);
-                            Intent.putExtra("Id", 2);
+//                            Intent.putExtra("Id", 2);
                             currentCar = finalCarArray.get(1);
                             Intent.putExtra("Current", currentCar);
                             //                            Intent.putExtra("Array", carArray);
+                            Intent.putExtra("PROFIT",(Serializable) carsSoldProfit);
 
                             args = new Bundle();
                             args.putSerializable("ARRAYLIST",(Serializable) finalCarArray);
@@ -132,9 +134,10 @@ public class MainActivity extends Cars {
                             startActivity(Intent);
                         case R.id.Vehicle3:
                             Intent = new Intent(getApplicationContext(), ViewActivity.class);
-                            Intent.putExtra("Id", 3);
+//                            Intent.putExtra("Id", 3);
                             currentCar = finalCarArray.get(2);
 //                            Intent.putExtra("Array", carArray);
+                            Intent.putExtra("PROFIT",(Serializable) carsSoldProfit);
 
                             args = new Bundle();
                             args.putSerializable("ARRAYLIST",(Serializable) finalCarArray);
@@ -142,7 +145,9 @@ public class MainActivity extends Cars {
                             startActivity(Intent);
                         case R.id.Vehicle4:
                             Intent = new Intent(getApplicationContext(), ViewActivity.class);
-                            Intent.putExtra("Id", 4);
+//                            Intent.putExtra("Id", 4);
+                            Intent.putExtra("PROFIT",(Serializable) carsSoldProfit);
+
                             currentCar = finalCarArray.get(3);
 //                            Intent.putExtra("Array", carArray);
                             Intent.putExtra("Current", currentCar);
@@ -152,9 +157,10 @@ public class MainActivity extends Cars {
                             startActivity(Intent);
                         case R.id.Vehicle5:
                             Intent = new Intent(getApplicationContext(), ViewActivity.class);
-                            Intent.putExtra("Id", 5);
+//                            Intent.putExtra("Id", 5);
                             currentCar = finalCarArray.get(4);
 //                            Intent.putExtra("Array", carArray);
+                            Intent.putExtra("PROFIT",(Serializable) carsSoldProfit);
 
                             Intent.putExtra("Current", currentCar);
                             args = new Bundle();
@@ -163,9 +169,10 @@ public class MainActivity extends Cars {
                             startActivity(Intent);
                         case R.id.Vehicle6:
                             Intent = new Intent(getApplicationContext(), ViewActivity.class);
-                            Intent.putExtra("Id", 6);
+//                            Intent.putExtra("Id", 6);
                             currentCar = finalCarArray.get(5);
 //                            Intent.putExtra("Array", carArray);
+                            Intent.putExtra("PROFIT",(Serializable) carsSoldProfit);
 
                             Intent.putExtra("Current", currentCar);
                             args = new Bundle();
@@ -174,9 +181,10 @@ public class MainActivity extends Cars {
                             startActivity(Intent);
                         case R.id.Vehicle7:
                             Intent = new Intent(getApplicationContext(), ViewActivity.class);
-                            Intent.putExtra("Id", 7);
+//                            Intent.putExtra("Id", 7);
                             currentCar = finalCarArray.get(6);
 //                            Intent.putExtra("Array", carArray);
+                            Intent.putExtra("PROFIT",(Serializable) carsSoldProfit);
 
                             Intent.putExtra("Current", currentCar);
                             args = new Bundle();
@@ -185,9 +193,10 @@ public class MainActivity extends Cars {
                             startActivity(Intent);
                         case R.id.Vehicle8:
                             Intent = new Intent(getApplicationContext(), ViewActivity.class);
-                            Intent.putExtra("Id", 8);
+//                            Intent.putExtra("Id", 8);
                             currentCar = finalCarArray.get(7);
 //                            Intent.putExtra("Array", carArray);
+                            Intent.putExtra("PROFIT",(Serializable) carsSoldProfit);
 
                             Intent.putExtra("Current", currentCar);
                             args = new Bundle();
@@ -196,15 +205,23 @@ public class MainActivity extends Cars {
                             startActivity(Intent);
                         case R.id.Vehicle9:
                             Intent = new Intent(getApplicationContext(), ViewActivity.class);
-                            Intent.putExtra("Id", 9);
+//                            Intent.putExtra("Id", 9);
                             currentCar = finalCarArray.get(8);
 //                            Intent.putExtra("Array", carArray);
+                            Intent.putExtra("PROFIT",(Serializable) carsSoldProfit);
 
                             Intent.putExtra("Current", currentCar);
                             args = new Bundle();
                             args.putSerializable("ARRAYLIST",(Serializable) finalCarArray);
                             Intent.putExtra("BUNDLE",args);
                             startActivity(Intent);
+
+                        case R.id.CompanyLink:
+                            Intent = new Intent(getApplicationContext(), CompanyView.class);
+                            Intent.putExtra("PROFIT",(Serializable) carsSoldProfit);
+                            startActivity(Intent);
+
+
                         default:
 //                            Intent = new Intent(getApplicationContext(), ViewActivity.class);
 //                            Intent.putExtra("Id", 1);
@@ -234,6 +251,10 @@ public class MainActivity extends Cars {
         ImageView View8 = findViewById(R.id.Vehicle8);
         ImageView View9 = findViewById(R.id.Vehicle9);
 
+        Button Company = findViewById(R.id.CompanyLink);
+
+
+        Company.setOnClickListener(onClickListener);
 
         View1.setOnClickListener(onClickListener);
         View2.setOnClickListener(onClickListener);

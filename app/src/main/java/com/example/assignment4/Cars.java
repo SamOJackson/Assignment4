@@ -16,15 +16,22 @@ public class Cars extends AppCompatActivity implements Serializable{
     private ArrayList<Cars> carArray = new ArrayList<>();
 
     private final String filename = "myfile";
+    private static String CCompanyName ="Assignment 3: Coding Cars";
+    private static String CCompanyAddress ="9 Main Street, Barrie, L4N 18R, ON, CA";
     private int carId;
     private String carImageName;
     private String carCompany;
     private String carModel;
 
+    private static int profit = 0;
 
+    private static int carsSold = 0;
+
+    private static int total;
+    private static int amount;
     private int cylinders;
     private int year;
-    private float price;
+    private int price;
     private String color;
     private Date sold;
     private boolean isAvailable;
@@ -37,7 +44,39 @@ public class Cars extends AppCompatActivity implements Serializable{
     public Cars() {
     }
 
-    public Cars(String carCompany, int cylinders, int year, float price, boolean isAvailable, String carName) {
+    public static String getCCompanyName() {
+        return CCompanyName;
+    }
+
+    public static void setCCompanyName(String CCompanyName2) {
+        CCompanyName = CCompanyName2;
+    }
+
+    public static String getCCompanyAddress() {
+        return CCompanyAddress;
+    }
+
+    public static void setCCompanyAddress(String CCompanyAddress2) {
+        CCompanyAddress = CCompanyAddress2;
+    }
+
+    public static int getTotal() {
+        return total;
+    }
+
+    public static void setTotal(int total) {
+        Cars.total = total;
+    }
+
+    public static int getAmount() {
+        return amount;
+    }
+
+    public static void setAmount(int amount) {
+        Cars.amount = amount;
+    }
+
+    public Cars(String carCompany, int cylinders, int year, int price, boolean isAvailable, String carName) {
         this.carCompany = carCompany;
         this.cylinders = cylinders;
         this.year = year;
@@ -46,7 +85,7 @@ public class Cars extends AppCompatActivity implements Serializable{
         this.carName = carName;
     }
 
-    public Cars(int carId, String carImageName, String carCompany, String carModel, int cylinders, int year, float price, String color, Date sold, boolean isAvailable, String carName) {
+    public Cars(int carId, String carImageName, String carCompany, String carModel, int cylinders, int year, int price, String color, Date sold, boolean isAvailable, String carName) {
         this.carId = carId;
         this.carImageName = carImageName;
         this.carCompany = carCompany;
@@ -256,8 +295,28 @@ public class Cars extends AppCompatActivity implements Serializable{
         return price2;
     }
 
-    public void setPrice(float price) {
+    public int getPrice2(){
+        return (int) price;
+    }
+
+    public void setPrice(int price) {
         this.price = price;
+    }
+
+    public static int getProfit() {
+        return profit;
+    }
+
+    public static void setProfit(int profit2) {
+        profit = profit2;
+    }
+
+    public static int getCarsSold() {
+        return carsSold;
+    }
+
+    public static void setCarsSold(int carsSold2) {
+        carsSold = carsSold2;
     }
 
     public String getColor() {
@@ -294,9 +353,9 @@ public class Cars extends AppCompatActivity implements Serializable{
         Cars car1 = new Cars("Red Car Company", 4, 2010, 10000, true, "Red Car");
         Cars car2 = new Cars("Yellow Car Company", 6, 2015, 20000, true, "Yellow Car");
         Cars car3 = new Cars("Cars Car Company", 8, 2020, 25000, true, "Cars Car");
-        Cars car4 = new Cars("Red Car Company", 4, 2012, 3000, false, "Red Car");
-        Cars car5 = new Cars("Yellow Car Company", 6, 2021, 35000, false, "Yellow Car");
-        Cars car6 = new Cars("Cars Car Company", 8, 2022, 40000, false, "Cars Car");
+        Cars car4 = new Cars("Red Car Company", 4, 2012, 3000, true, "Red Car");
+        Cars car5 = new Cars("Yellow Car Company", 6, 2021, 35000, true, "Yellow Car");
+        Cars car6 = new Cars("Cars Car Company", 8, 2022, 40000, true, "Cars Car");
 
         carArray.add(car1);
         carArray.add(car2);
