@@ -11,6 +11,7 @@ import android.widget.EditText;
 import com.google.android.material.snackbar.Snackbar;
 
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 
@@ -22,7 +23,12 @@ public class AddActivity extends Cars {
         setContentView(R.layout.activity_add);
 
         currentCar = (Cars) getIntent().getSerializableExtra("Current");
-        ArrayList<Cars> carArray = (ArrayList<Cars>) getIntent().getSerializableExtra("Array");
+        //ArrayList<Cars> carArray = (ArrayList<Cars>) getIntent().getSerializableExtra("Array");
+
+        Intent intent = getIntent();
+        Bundle args = intent.getBundleExtra("BUNDLE");
+        ArrayList<Cars> carArray = (ArrayList<Cars>) args.getSerializable("ARRAYLIST");
+
 
         View.OnClickListener onClickListener = new View.OnClickListener() {
             @Override
@@ -41,14 +47,19 @@ public class AddActivity extends Cars {
                 CheckBox simpleCheckBox2 = (CheckBox) findViewById(R.id.available3);
                 Button submit = (Button) findViewById(R.id.submit2);
                 Intent Intent;
+                Bundle args;
                 switch (selectedItemIdA) {
                     case R.id.vehicleButton3:
                         Intent = new Intent(getApplicationContext(), MainActivity.class);
+
                         startActivity(Intent);
                         break;
                     case R.id.add2:
                         Intent = new Intent(getApplicationContext(), AddActivity.class);
                         Intent.putExtra("Current", currentCar);
+                        args = new Bundle();
+                        args.putSerializable("ARRAYLIST",(Serializable) carArray);
+                        Intent.putExtra("BUNDLE",args);
 
                         startActivity(Intent);
                         break;
@@ -57,6 +68,10 @@ public class AddActivity extends Cars {
                         startActivity(Intent);
                         Intent.putExtra("Current", currentCar);
 
+                        args = new Bundle();
+                        args.putSerializable("ARRAYLIST",(Serializable) carArray);
+                        Intent.putExtra("BUNDLE",args);
+
                         startActivity(Intent);
                         break;
                     case R.id.submit2:
@@ -64,11 +79,21 @@ public class AddActivity extends Cars {
                         carArray.add(currentCar);
                         Intent = new Intent(getApplicationContext(), ViewActivity.class);
                         Intent.putExtra("Current", currentCar);
+
+                        args = new Bundle();
+                        args.putSerializable("ARRAYLIST",(Serializable) carArray);
+                        Intent.putExtra("BUNDLE",args);
+
                         startActivity(Intent);
                         break;
                     case R.id.backToView:
                         Intent = new Intent(getApplicationContext(), ViewActivity.class);
                         Intent.putExtra("Current", currentCar);
+
+                        args = new Bundle();
+                        args.putSerializable("ARRAYLIST",(Serializable) carArray);
+                        Intent.putExtra("BUNDLE",args);
+
                         startActivity(Intent);
                         break;
                     default:

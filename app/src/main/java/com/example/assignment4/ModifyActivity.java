@@ -12,19 +12,29 @@ import android.widget.Toast;
 import com.google.android.material.snackbar.Snackbar;
 
 import java.io.FileInputStream;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class ModifyActivity extends Cars {
-
+    private int getPlace;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_modify);
 
         currentCar = (Cars) getIntent().getSerializableExtra("Current");
-        ArrayList<Cars> carArray = (ArrayList<Cars>) getIntent().getSerializableExtra("Array");
+//        ArrayList<Cars> carArray = new ArrayList<Cars>();
+//        carArray = (ArrayList<Cars>) getIntent().getSerializableExtra("Array");
+        Intent intent = getIntent();
+        Bundle args = intent.getBundleExtra("BUNDLE");
+        ArrayList<Cars> carArray = (ArrayList<Cars>) args.getSerializable("ARRAYLIST");
 
+        for(int i = 0; i < carArray.size();i++){
+            if(carArray.get(i).equals(currentCar)){
+                getPlace = carArray.indexOf(currentCar);
+            }
+        }
 
         TextView textView = findViewById(R.id.CurrentName);
         textView.setText(currentCar.getCarName());
@@ -47,6 +57,7 @@ public class ModifyActivity extends Cars {
         price.setText(currentCar.getPrice());
 
 
+        ArrayList<Cars> finalCarArray = carArray;
         View.OnClickListener onClickListener = new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -54,6 +65,7 @@ public class ModifyActivity extends Cars {
                 int selectedItemIdM = view.getId();
 
                 Intent Intent;
+                Bundle args;
                 switch (selectedItemIdM) {
                     case R.id.vehicleButton2:
                         Intent = new Intent(getApplicationContext(), MainActivity.class);
@@ -61,22 +73,49 @@ public class ModifyActivity extends Cars {
                         break;
                     case R.id.Add2:
                         Intent = new Intent(getApplicationContext(), AddActivity.class);
-                        Intent.putExtra("Array", carArray);
+                       // Intent.putExtra("Array", carArray);
                         Intent.putExtra("Current", currentCar);
+
+                        args = new Bundle();
+                        args.putSerializable("ARRAYLIST",(Serializable) finalCarArray);
+                        Intent.putExtra("BUNDLE",args);
                         startActivity(Intent);
                         break;
                     case R.id.Modify2:
                         Intent = new Intent(getApplicationContext(), ModifyActivity.class);
                         Intent.putExtra("Current", currentCar);
+
+                        args = new Bundle();
+                        args.putSerializable("ARRAYLIST",(Serializable) finalCarArray);
+                        Intent.putExtra("BUNDLE",args);
                         startActivity(Intent);
                         break;
                     case R.id.submit:
-                        carArray.set(carArray.indexOf(currentCar), submitting());
+                        Intent = new Intent(getApplicationContext(), ViewActivity.class);
+                        finalCarArray.set(getPlace, submitting());
+
+//                        finalCarArray.set(finalCarArray.indexOf(currentCar), submitting());
+
+                        Intent.putExtra("Current", currentCar);
+//                        Intent.putExtra("Array", carArray);
+
+                        args = new Bundle();
+                        args.putSerializable("ARRAYLIST",(Serializable) finalCarArray);
+                        Intent.putExtra("BUNDLE", args);
+                        Snackbar.make(view, "Car Added", Snackbar.LENGTH_LONG).show();
+
+                        startActivity(Intent);
+
                         break;
                     case R.id.BackToView:
+
                         Intent = new Intent(getApplicationContext(), ViewActivity.class);
                         Intent.putExtra("Current", currentCar);
-                        Intent.putExtra("Array", carArray);
+//                        Intent.putExtra("Array", carArray);
+
+                        args = new Bundle();
+                        args.putSerializable("ARRAYLIST",(Serializable) finalCarArray);
+                        Intent.putExtra("BUNDLE",args);
                         startActivity(Intent);
                         break;
                     default:
@@ -163,7 +202,7 @@ public class ModifyActivity extends Cars {
             currentCar.setIsAvailable(false);
         }
 //        return newCar;
-//        currentCar = newCarfull;
+        currentCar = newCarfull;
         return newCarfull;
     }
 }

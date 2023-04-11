@@ -10,6 +10,7 @@ import android.widget.Toast;
 
 import com.google.android.material.snackbar.Snackbar;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 public class MainActivity extends Cars {
@@ -19,15 +20,24 @@ public class MainActivity extends Cars {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        ArrayList<Cars> carArray2 = (ArrayList<Cars>) getIntent().getSerializableExtra("Array");
+//        ArrayList<Cars> carArray2 = (ArrayList<Cars>) getIntent().getSerializableExtra("Array");
         currentCar = (Cars) getIntent().getSerializableExtra("Current");
+
+//        Intent intent = getIntent();
+//        Bundle args = intent.getBundleExtra("BUNDLE");
+//        ArrayList<Cars> carArray = (ArrayList<Cars>) args.getSerializable("ARRAYLIST");
 
 //        Intent intent;
         Drawable drawable;
 //        int i = 0;
-
-        ArrayList<Cars> carArray = createArray();
-
+        ArrayList<Cars> carArray = new ArrayList<>();
+        if(!carArray.isEmpty()) {
+            Intent intent = getIntent();
+            Bundle args = intent.getBundleExtra("BUNDLE");
+            carArray = (ArrayList<Cars>) args.getSerializable("ARRAYLIST");
+        }else{
+            carArray = createArray();
+        }
 //        for (Cars c: carArray) {
          for(int i = 0; i < carArray.size(); i ++ ) {
              try {
@@ -83,13 +93,14 @@ public class MainActivity extends Cars {
              }
          }
 
+        ArrayList<Cars> finalCarArray = carArray;
         View.OnClickListener onClickListener = new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
                 int selectedItemId = view.getId();
                 Intent Intent;
-
+                Bundle args;
                 Snackbar.make(view, "Hello", Snackbar.LENGTH_LONG).show();
                 try {
                     switch (selectedItemId) {
@@ -100,89 +111,111 @@ public class MainActivity extends Cars {
                         case R.id.Vehicle1:
                             Intent = new Intent(getApplicationContext(), ViewActivity.class);
                             Intent.putExtra("Id", 1);
-                            currentCar = carArray.get(0);
+                            currentCar = finalCarArray.get(0);
                             Intent.putExtra("Current", currentCar);
-                            Intent.putExtra("Array", carArray);
+//                            Intent.putExtra("Array", carArray);
 
+                            args = new Bundle();
+                            args.putSerializable("ARRAYLIST",(Serializable) finalCarArray);
+                            Intent.putExtra("BUNDLE",args);
                             startActivity(Intent);
                         case R.id.Vehicle2:
                             Intent = new Intent(getApplicationContext(), ViewActivity.class);
                             Intent.putExtra("Id", 2);
-                            currentCar = carArray.get(1);
-                            Intent.putExtra("Array", carArray);
-
+                            currentCar = finalCarArray.get(1);
                             Intent.putExtra("Current", currentCar);
+                            //                            Intent.putExtra("Array", carArray);
+
+                            args = new Bundle();
+                            args.putSerializable("ARRAYLIST",(Serializable) finalCarArray);
+                            Intent.putExtra("BUNDLE",args);
                             startActivity(Intent);
                         case R.id.Vehicle3:
                             Intent = new Intent(getApplicationContext(), ViewActivity.class);
                             Intent.putExtra("Id", 3);
-                            currentCar = carArray.get(2);
-                            Intent.putExtra("Array", carArray);
+                            currentCar = finalCarArray.get(2);
+//                            Intent.putExtra("Array", carArray);
 
-                            Intent.putExtra("Current", currentCar);
+                            args = new Bundle();
+                            args.putSerializable("ARRAYLIST",(Serializable) finalCarArray);
+                            Intent.putExtra("BUNDLE",args);
                             startActivity(Intent);
                         case R.id.Vehicle4:
                             Intent = new Intent(getApplicationContext(), ViewActivity.class);
                             Intent.putExtra("Id", 4);
-                            currentCar = carArray.get(3);
-                            Intent.putExtra("Array", carArray);
-
+                            currentCar = finalCarArray.get(3);
+//                            Intent.putExtra("Array", carArray);
                             Intent.putExtra("Current", currentCar);
-
+                            args = new Bundle();
+                            args.putSerializable("ARRAYLIST",(Serializable) finalCarArray);
+                            Intent.putExtra("BUNDLE",args);
                             startActivity(Intent);
                         case R.id.Vehicle5:
                             Intent = new Intent(getApplicationContext(), ViewActivity.class);
                             Intent.putExtra("Id", 5);
-                            currentCar = carArray.get(4);
-                            Intent.putExtra("Array", carArray);
+                            currentCar = finalCarArray.get(4);
+//                            Intent.putExtra("Array", carArray);
 
                             Intent.putExtra("Current", currentCar);
-
+                            args = new Bundle();
+                            args.putSerializable("ARRAYLIST",(Serializable) finalCarArray);
+                            Intent.putExtra("BUNDLE",args);
                             startActivity(Intent);
                         case R.id.Vehicle6:
                             Intent = new Intent(getApplicationContext(), ViewActivity.class);
                             Intent.putExtra("Id", 6);
-                            currentCar = carArray.get(5);
-                            Intent.putExtra("Array", carArray);
+                            currentCar = finalCarArray.get(5);
+//                            Intent.putExtra("Array", carArray);
 
                             Intent.putExtra("Current", currentCar);
-
+                            args = new Bundle();
+                            args.putSerializable("ARRAYLIST",(Serializable) finalCarArray);
+                            Intent.putExtra("BUNDLE",args);
                             startActivity(Intent);
                         case R.id.Vehicle7:
                             Intent = new Intent(getApplicationContext(), ViewActivity.class);
                             Intent.putExtra("Id", 7);
-                            currentCar = carArray.get(6);
-                            Intent.putExtra("Array", carArray);
+                            currentCar = finalCarArray.get(6);
+//                            Intent.putExtra("Array", carArray);
 
                             Intent.putExtra("Current", currentCar);
-
+                            args = new Bundle();
+                            args.putSerializable("ARRAYLIST",(Serializable) finalCarArray);
+                            Intent.putExtra("BUNDLE",args);
                             startActivity(Intent);
                         case R.id.Vehicle8:
                             Intent = new Intent(getApplicationContext(), ViewActivity.class);
                             Intent.putExtra("Id", 8);
-                            currentCar = carArray.get(7);
-                            Intent.putExtra("Array", carArray);
+                            currentCar = finalCarArray.get(7);
+//                            Intent.putExtra("Array", carArray);
 
                             Intent.putExtra("Current", currentCar);
-
+                            args = new Bundle();
+                            args.putSerializable("ARRAYLIST",(Serializable) finalCarArray);
+                            Intent.putExtra("BUNDLE",args);
                             startActivity(Intent);
                         case R.id.Vehicle9:
                             Intent = new Intent(getApplicationContext(), ViewActivity.class);
                             Intent.putExtra("Id", 9);
-                            currentCar = carArray.get(8);
-                            Intent.putExtra("Array", carArray);
+                            currentCar = finalCarArray.get(8);
+//                            Intent.putExtra("Array", carArray);
 
                             Intent.putExtra("Current", currentCar);
+                            args = new Bundle();
+                            args.putSerializable("ARRAYLIST",(Serializable) finalCarArray);
+                            Intent.putExtra("BUNDLE",args);
                             startActivity(Intent);
-
                         default:
-                            Intent = new Intent(getApplicationContext(), ViewActivity.class);
-                            Intent.putExtra("Id", 1);
-                            currentCar = carArray.get(0);
-                            Intent.putExtra("Current", currentCar);
-                            Intent.putExtra("Array", carArray);
-
-                            startActivity(Intent);
+//                            Intent = new Intent(getApplicationContext(), ViewActivity.class);
+//                            Intent.putExtra("Id", 1);
+//                            currentCar = finalCarArray.get(0);
+//                            Intent.putExtra("Current", currentCar);
+////                            Intent.putExtra("Array", carArray);
+//                            args = new Bundle();
+//                            args.putSerializable("ARRAYLIST",(Serializable) finalCarArray);
+//                            Intent.putExtra("BUNDLE",args);
+//                            startActivity(Intent);
+                            Snackbar.make(view, "unknown item selected", Snackbar.LENGTH_LONG).show();
                     }
                 }catch (Exception e)
                 {
