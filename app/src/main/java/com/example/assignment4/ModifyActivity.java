@@ -69,24 +69,29 @@ public class ModifyActivity extends Cars {
                 switch (selectedItemIdM) {
                     case R.id.vehicleButton2:
                         Intent = new Intent(getApplicationContext(), MainActivity.class);
+                        Intent.putExtra("Current", currentCar);
+//                        Intent.putExtra("Array", carArray);
+                        args = new Bundle();
+                        args.putSerializable("ARRAYLIST",(Serializable)carArray);
+                        Intent.putExtra("BUNDLE",args);
                         startActivity(Intent);
                         break;
                     case R.id.Add2:
                         Intent = new Intent(getApplicationContext(), AddActivity.class);
                        // Intent.putExtra("Array", carArray);
                         Intent.putExtra("Current", currentCar);
-
+//                        Intent.putExtra("Array", carArray);
                         args = new Bundle();
-                        args.putSerializable("ARRAYLIST",(Serializable) finalCarArray);
+                        args.putSerializable("ARRAYLIST",(Serializable)carArray);
                         Intent.putExtra("BUNDLE",args);
                         startActivity(Intent);
                         break;
                     case R.id.Modify2:
                         Intent = new Intent(getApplicationContext(), ModifyActivity.class);
                         Intent.putExtra("Current", currentCar);
-
+//                        Intent.putExtra("Array", carArray);
                         args = new Bundle();
-                        args.putSerializable("ARRAYLIST",(Serializable) finalCarArray);
+                        args.putSerializable("ARRAYLIST",(Serializable)carArray);
                         Intent.putExtra("BUNDLE",args);
                         startActivity(Intent);
                         break;
@@ -112,9 +117,8 @@ public class ModifyActivity extends Cars {
                         Intent = new Intent(getApplicationContext(), ViewActivity.class);
                         Intent.putExtra("Current", currentCar);
 //                        Intent.putExtra("Array", carArray);
-
                         args = new Bundle();
-                        args.putSerializable("ARRAYLIST",(Serializable) finalCarArray);
+                        args.putSerializable("ARRAYLIST",(Serializable)carArray);
                         Intent.putExtra("BUNDLE",args);
                         startActivity(Intent);
                         break;

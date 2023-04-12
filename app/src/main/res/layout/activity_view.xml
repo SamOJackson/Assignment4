@@ -46,7 +46,7 @@
             app:layout_constraintVertical_bias="0.667" />
 
         <TextView
-            android:id="@+id/cylinders"
+            android:id="@+id/Cylinders"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/carCylinders"
@@ -58,7 +58,7 @@
             app:layout_constraintVertical_bias="0.641" />
 
         <TextView
-            android:id="@+id/Cylinders"
+            android:id="@+id/cylinders"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/carCylinders"

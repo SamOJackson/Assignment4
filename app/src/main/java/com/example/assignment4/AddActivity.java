@@ -29,6 +29,7 @@ public class AddActivity extends Cars {
         Bundle args = intent.getBundleExtra("BUNDLE");
         ArrayList<Cars> carArray = (ArrayList<Cars>) args.getSerializable("ARRAYLIST");
 
+        ArrayList<Cars> finalCarArray = carArray;
 
         View.OnClickListener onClickListener = new View.OnClickListener() {
             @Override
@@ -52,13 +53,18 @@ public class AddActivity extends Cars {
                     case R.id.vehicleButton3:
                         Intent = new Intent(getApplicationContext(), MainActivity.class);
 
+                        Intent.putExtra("Current", currentCar);
+                        args = new Bundle();
+                        args.putSerializable("ARRAYLIST",(Serializable) finalCarArray);
+                        Intent.putExtra("BUNDLE",args);
+
                         startActivity(Intent);
                         break;
                     case R.id.add2:
                         Intent = new Intent(getApplicationContext(), AddActivity.class);
                         Intent.putExtra("Current", currentCar);
                         args = new Bundle();
-                        args.putSerializable("ARRAYLIST",(Serializable) carArray);
+                        args.putSerializable("ARRAYLIST",(Serializable) finalCarArray);
                         Intent.putExtra("BUNDLE",args);
 
                         startActivity(Intent);
@@ -69,19 +75,26 @@ public class AddActivity extends Cars {
                         Intent.putExtra("Current", currentCar);
 
                         args = new Bundle();
-                        args.putSerializable("ARRAYLIST",(Serializable) carArray);
+                        args.putSerializable("ARRAYLIST",(Serializable) finalCarArray);
                         Intent.putExtra("BUNDLE",args);
 
                         startActivity(Intent);
                         break;
                     case R.id.submit2:
-                        currentCar = Submitting();
+                        try {
+                            currentCar = Submitting();
+
+                        }catch(Exception e)
+                        {
+                            System.out.println("Exception " +e);
+                        }
+
                         carArray.add(currentCar);
                         Intent = new Intent(getApplicationContext(), ViewActivity.class);
                         Intent.putExtra("Current", currentCar);
 
                         args = new Bundle();
-                        args.putSerializable("ARRAYLIST",(Serializable) carArray);
+                        args.putSerializable("ARRAYLIST",(Serializable) finalCarArray);
                         Intent.putExtra("BUNDLE",args);
 
                         startActivity(Intent);
@@ -91,7 +104,7 @@ public class AddActivity extends Cars {
                         Intent.putExtra("Current", currentCar);
 
                         args = new Bundle();
-                        args.putSerializable("ARRAYLIST",(Serializable) carArray);
+                        args.putSerializable("ARRAYLIST",(Serializable) finalCarArray);
                         Intent.putExtra("BUNDLE",args);
 
                         startActivity(Intent);
@@ -142,7 +155,6 @@ public class AddActivity extends Cars {
         }
 //        Cars addCar = new Cars(carName, carCompany, available);
         Cars addCar = new Cars(carCompany, Integer.parseInt(CylinderAdd), Integer.parseInt(yearAdd), Integer.parseInt(priceAdd), checkedBoxState, carName);
-
 //        currentCar = addCar;
         return addCar;
     }

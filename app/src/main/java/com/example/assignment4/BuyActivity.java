@@ -34,12 +34,14 @@ public class BuyActivity extends Cars {
         TextView textView = findViewById(R.id.totals2);
 //        textView.setText(getTotal());
         textView.setText(currentCar.getPrice());
+        TextView totalPrice = findViewById(R.id.totalPrice2);
+        totalPrice.setText(currentCar.getPrice());
         TextView textView2 = findViewById(R.id.totalCarName);
         textView2.setText(currentCar.getCarName());
 //        TextView totalAmount = findViewById(R.id.totalAmount);
-        TextView totalPrice = findViewById(R.id.totalPrice2);
-//        totalAmount.setText(getAmount());
-        totalPrice.setText(getPrice());
+//        TextView totalPrice = findViewById(R.id.totalPrice2);
+////        totalAmount.setText(getAmount());
+//        totalPrice.setText(getPrice());
 
         ArrayList<Cars> finalCarArray = carArray;
         View.OnClickListener onClickListener = new View.OnClickListener() {
@@ -53,6 +55,13 @@ public class BuyActivity extends Cars {
                 switch (selectedItemIdM) {
                     case R.id.vehicleButton5:
                         Intent = new Intent(getApplicationContext(), MainActivity.class);
+                        Intent.putExtra("PROFIT",(Serializable) carsSoldProfit);
+                        Intent.putExtra("Current", currentCar);
+
+                        args = new Bundle();
+                        args.putSerializable("ARRAYLIST",(Serializable) finalCarArray);
+                        Intent.putExtra("BUNDLE",args);
+
                         startActivity(Intent);
                         break;
                     case R.id.submit3:
@@ -66,11 +75,12 @@ public class BuyActivity extends Cars {
 
 //                        Intent.putExtra("PROFIT", finalprofit[0]);
 //                        Intent.putExtra("CARSSOLD", finalcarssold[0]);
+                        Intent.putExtra("PROFIT",(Serializable) carsSoldProfit);
                         Intent.putExtra("Current", currentCar);
+
                         args = new Bundle();
                         args.putSerializable("ARRAYLIST",(Serializable) finalCarArray);
-                        Intent.putExtra("BUNDLE", args);
-                        Snackbar.make(view, "Car Added", Snackbar.LENGTH_LONG).show();
+                        Intent.putExtra("BUNDLE",args);
 
                         startActivity(Intent);
 
@@ -78,8 +88,8 @@ public class BuyActivity extends Cars {
                     case R.id.BackToView:
 
                         Intent = new Intent(getApplicationContext(), ViewActivity.class);
+                        Intent.putExtra("PROFIT",(Serializable) carsSoldProfit);
                         Intent.putExtra("Current", currentCar);
-//                        Intent.putExtra("Array", carArray);
 
                         args = new Bundle();
                         args.putSerializable("ARRAYLIST",(Serializable) finalCarArray);

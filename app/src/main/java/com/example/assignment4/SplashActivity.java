@@ -4,16 +4,20 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 
+import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
-public class SplashActivity extends AppCompatActivity {
+public class SplashActivity extends Cars {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
+
+        ArrayList<Cars> carArray = createArray();
 
         //use threads
 
@@ -22,7 +26,12 @@ public class SplashActivity extends AppCompatActivity {
 
         Runnable task = () ->{
             Intent intent = new Intent(this, MainActivity.class);
+            Bundle args = new Bundle();
+            args.putSerializable("ARRAYLIST", (Serializable) carArray);
+            intent.putExtra("BUNDLE", args);
+
             startActivity(intent);
+
         };
         ScheduledExecutorService scheduledExecutorService = Executors.newSingleThreadScheduledExecutor();
 

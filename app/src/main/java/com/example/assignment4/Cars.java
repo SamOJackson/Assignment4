@@ -15,7 +15,7 @@ import java.util.Date;
 public class Cars extends AppCompatActivity implements Serializable{
     private ArrayList<Cars> carArray = new ArrayList<>();
 
-    private final String filename = "myfile";
+//    private final String filename = "myfile";
     private static String CCompanyName ="Assignment 3: Coding Cars";
     private static String CCompanyAddress ="9 Main Street, Barrie, L4N 18R, ON, CA";
     private int carId;
@@ -356,7 +356,7 @@ public class Cars extends AppCompatActivity implements Serializable{
         Cars car4 = new Cars("Red Car Company", 4, 2012, 3000, true, "Red Car");
         Cars car5 = new Cars("Yellow Car Company", 6, 2021, 35000, true, "Yellow Car");
         Cars car6 = new Cars("Cars Car Company", 8, 2022, 40000, true, "Cars Car");
-        Cars car7 = new Cars("Question Car Company", 6, 2021, 35000, true, "Question Car");
+        Cars car7 = new Cars("Question Car Company", 6, 2021, 35000, false, "Question Car");
 
         carArray.add(car1);
         carArray.add(car2);
@@ -364,6 +364,7 @@ public class Cars extends AppCompatActivity implements Serializable{
         carArray.add(car4);
         carArray.add(car5);
         carArray.add(car6);
+        carArray.add(car7);
 
         return carArray;
     }

@@ -1,23 +1,16 @@
 package com.example.assignment4;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.CheckBox;
 import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.google.android.material.snackbar.Snackbar;
 
 import java.io.Serializable;
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.TreeMap;
 
 public class CompanyView extends Cars {
 
@@ -34,13 +27,13 @@ public class CompanyView extends Cars {
 //        Bundle args = intent.getBundleExtra("BUNDLE");
 //        ArrayList<Cars> carArray = (ArrayList<Cars>) args.getSerializable("ARRAYLIST");
 //
-        TextView Cc = findViewById(R.id.CCompanyName);
+        TextView Cc = findViewById(R.id.CCompanyName2);
         Cc.setText(Cars.getCCompanyName());
-        TextView Address = findViewById(R.id.companyAddress);
+        TextView Address = findViewById(R.id.companyAddress2);
         Address.setText(Cars.getCCompanyAddress());
 
-        TextView carsSold = findViewById(R.id.CarsSold);
-        TextView profit = findViewById(R.id.Profit);
+        TextView carsSold = findViewById(R.id.CarsSold2);
+        TextView profit = findViewById(R.id.Profit2);
 //        carsSoldProfit.get("Profit");
 //        carsSold.setText(carsSoldProfit.get("Profit"));
 //        profit.setText(carsSoldProfit.get("CarsSold"));
@@ -51,9 +44,15 @@ public class CompanyView extends Cars {
                 int selectedItemIdV = view.getId();
                 Intent Intent;
                 Bundle args;
-                switch (selectedItemIdV){
-                    case R.id.vehicleButton6:
+                switch (selectedItemIdV) {
+                    case R.id.vehicleButton9:
                         Intent = new Intent(getApplicationContext(), MainActivity.class);
+                        Intent.putExtra("Current", currentCar);
+                        args = new Bundle();
+                        args.putSerializable("ARRAYLIST", (Serializable) carArray);
+                        Intent.putExtra("BUNDLE", args);
+                        Intent.putExtra("PROFIT", (Serializable) carsSoldProfit);
+
                         startActivity(Intent);
                         break;
                     case R.id.submit4:
@@ -71,7 +70,7 @@ public class CompanyView extends Cars {
             }
         };
 
-        Button Vehicles = findViewById(R.id.vehicleButton6);
+        Button Vehicles = findViewById(R.id.vehicleButton9);
         Button submit = findViewById(R.id.submit4);
 
         Vehicles.setOnClickListener(onClickListener);
