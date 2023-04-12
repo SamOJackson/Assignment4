@@ -35,4 +35,6 @@
     <string name="Card">Card</string>
     <string name="Edit">Edit</string>
     <string name="zero">0</string>
+    <string name="notInStock">Not in Stock</string>
+    <string name="inStock">In Stock</string>
 </resources>

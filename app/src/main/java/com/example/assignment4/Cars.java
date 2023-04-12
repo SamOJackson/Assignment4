@@ -37,9 +37,9 @@ public class Cars extends AppCompatActivity implements Serializable{
     private boolean isAvailable;
     private String carName;
     public static Cars currentCar;
-    private final String redCarImage = "![](../../../../res/drawable/redcar.png)";
-    private final String yellowCarImage = "![](../../../../res/drawable/yellowcar.jpg)";
-    private final String carsCarImage = "![](../../../../res/drawable/carscar.jpg)";
+//    private final String redCarImage = "![](../../../../res/drawable/redcar.png)";
+//    private final String yellowCarImage = "![](../../../../res/drawable/yellowcar.jpg)";
+//    private final String carsCarImage = "![](../../../../res/drawable/carscar.jpg)";
 
     public Cars() {
     }
@@ -102,28 +102,28 @@ public class Cars extends AppCompatActivity implements Serializable{
     public Cars(String carName, String carCompany, boolean isAvailable) {
         this.carName = carName;
         this.carCompany = carCompany;
-        if (carName.equals("Red Car")) {
-            carImageName = redCarImage;
-        }
-        if (carName.equals("Yellow Car")) {
-            carImageName = yellowCarImage;
-        }
-        if (carName.equals("Cars Car")) {
-            carImageName = carsCarImage;
-        }
-        if(carName.equals("Redder Car")) {
-            carImageName = redCarImage;
-        }
-        if(carName.equals("Yellower Car")){
-            carImageName = yellowCarImage;
-        }
-        if(carName.equals("Carser Car")){
-//            ImageView carscar = findViewById(R.id.yellowcar2);
-//            Drawable carscardrawable = carscar.;
-//            this.carImageName = carscardrawable;
-//            carImageName = "/../../../../res/drawable/carscar.jpg/";
-            carImageName = redCarImage;
-        }
+//        if (carName.equals("Red Car")) {
+//            carImageName = redCarImage;
+//        }
+//        if (carName.equals("Yellow Car")) {
+//            carImageName = yellowCarImage;
+//        }
+//        if (carName.equals("Cars Car")) {
+//            carImageName = carsCarImage;
+//        }
+//        if(carName.equals("Redder Car")) {
+//            carImageName = redCarImage;
+//        }
+//        if(carName.equals("Yellower Car")){
+//            carImageName = yellowCarImage;
+//        }
+//        if(carName.equals("Carser Car")){
+////            ImageView carscar = findViewById(R.id.yellowcar2);
+////            Drawable carscardrawable = carscar.;
+////            this.carImageName = carscardrawable;
+////            carImageName = "/../../../../res/drawable/carscar.jpg/";
+//            carImageName = redCarImage;
+//        }
     }
 
 
@@ -131,29 +131,29 @@ public class Cars extends AppCompatActivity implements Serializable{
         this.carName = carName;
         this.carId = carId;
         this.carCompany = carCompany;
-        if (carName.equals("Red Car")) {
-            carImageName = redCarImage;
-        }
-        if (carName.equals("Yellow Car")) {
-            carImageName = yellowCarImage;
-        }
-        if (carName.equals("Cars Car")) {
-            carImageName = carsCarImage;
-        }
-        if(carName.equals("Redder Car")) {
-            carImageName = redCarImage;
-        }
-        if(carName.equals("Yellower Car")){
-            carImageName = yellowCarImage;
-        }
-        if(carName.equals("Carser Car")){
-//            ImageView carscar = findViewById(R.id.yellowcar2);
-//            Drawable carscardrawable = carscar.;
-//            this.carImageName = carscardrawable;
-//            carImageName = "/../../../../res/drawable/carscar.jpg/";
-            carImageName = redCarImage;
-        }
-        this.carImageName = carImageName;
+//        if (carName.equals("Red Car")) {
+//            carImageName = redCarImage;
+//        }
+//        if (carName.equals("Yellow Car")) {
+//            carImageName = yellowCarImage;
+//        }
+//        if (carName.equals("Cars Car")) {
+//            carImageName = carsCarImage;
+//        }
+//        if(carName.equals("Redder Car")) {
+//            carImageName = redCarImage;
+//        }
+//        if(carName.equals("Yellower Car")){
+//            carImageName = yellowCarImage;
+//        }
+//        if(carName.equals("Carser Car")){
+////            ImageView carscar = findViewById(R.id.yellowcar2);
+////            Drawable carscardrawable = carscar.;
+////            this.carImageName = carscardrawable;
+////            carImageName = "/../../../../res/drawable/carscar.jpg/";
+//            carImageName = redCarImage;
+//        }
+//        this.carImageName = carImageName;
     }
 
     public String getCarName() {
@@ -182,50 +182,50 @@ public class Cars extends AppCompatActivity implements Serializable{
         this.carId = carId;
         this.carCompany = carCompany;
         this.isAvailable = isAvailable;
-//        if(carName.equals("Red Car")) {
-//            carImageName = "/../../../../res/drawable/redcar.png";
+////        if(carName.equals("Red Car")) {
+////            carImageName = "/../../../../res/drawable/redcar.png";
+////        }
+////        if(carName.equals("Yellow Car")){
+////            carImageName =  "/../../../../res/drawable/yellowcar.jpg";
+////        }
+////        if(carName.equals("Cars Car")) {
+////            carImageName = "/../../../../res/drawable/carscar.jpg";
+////        }
+////        if(carName.equals("Redder Car")) {
+////            carImageName = "/../../../../res/drawable/redcar.png/";
+////        }
+////        if(carName.equals("Yellower Car")){
+////            carImageName =  "/../../../../res/drawable/yellowcar.jpg/";
+////        }
+////        if(carName.equals("Carser Car")){
+//////            ImageView carscar = findViewById(R.id.yellowcar2);
+//////            Drawable carscardrawable = carscar.;
+//////            this.carImageName = carscardrawable;
+////            carImageName = "/../../../../res/drawable/carscar.jpg/";
+////        }
+//        if (carName.equals("Red Car")) {
+//            carImageName = redCarImage;
 //        }
-//        if(carName.equals("Yellow Car")){
-//            carImageName =  "/../../../../res/drawable/yellowcar.jpg";
+//        if (carName.equals("Yellow Car")) {
+//            carImageName = yellowCarImage;
 //        }
-//        if(carName.equals("Cars Car")) {
-//            carImageName = "/../../../../res/drawable/carscar.jpg";
+//        if (carName.equals("Cars Car")) {
+//            carImageName = carsCarImage;
 //        }
 //        if(carName.equals("Redder Car")) {
-//            carImageName = "/../../../../res/drawable/redcar.png/";
+//            carImageName = redCarImage;
 //        }
 //        if(carName.equals("Yellower Car")){
-//            carImageName =  "/../../../../res/drawable/yellowcar.jpg/";
+//            carImageName = yellowCarImage;
 //        }
 //        if(carName.equals("Carser Car")){
 ////            ImageView carscar = findViewById(R.id.yellowcar2);
 ////            Drawable carscardrawable = carscar.;
 ////            this.carImageName = carscardrawable;
-//            carImageName = "/../../../../res/drawable/carscar.jpg/";
+////            carImageName = "/../../../../res/drawable/carscar.jpg/";
+//            carImageName = redCarImage;
 //        }
-        if (carName.equals("Red Car")) {
-            carImageName = redCarImage;
-        }
-        if (carName.equals("Yellow Car")) {
-            carImageName = yellowCarImage;
-        }
-        if (carName.equals("Cars Car")) {
-            carImageName = carsCarImage;
-        }
-        if(carName.equals("Redder Car")) {
-            carImageName = redCarImage;
-        }
-        if(carName.equals("Yellower Car")){
-            carImageName = yellowCarImage;
-        }
-        if(carName.equals("Carser Car")){
-//            ImageView carscar = findViewById(R.id.yellowcar2);
-//            Drawable carscardrawable = carscar.;
-//            this.carImageName = carscardrawable;
-//            carImageName = "/../../../../res/drawable/carscar.jpg/";
-            carImageName = redCarImage;
-        }
-        this.carImageName = carImageName;
+//        this.carImageName = carImageName;
     }
 
     public void setCarName(String carName) {
@@ -236,32 +236,32 @@ public class Cars extends AppCompatActivity implements Serializable{
         this.carId = carId;
     }
 
-    public void setCarImageName(String carName) {
-
-        if (carName.equals("Red Car")) {
-            carImageName = redCarImage;
-        }
-        if (carName.equals("Yellow Car")) {
-            carImageName = yellowCarImage;
-        }
-        if (carName.equals("Cars Car")) {
-            carImageName = carsCarImage;
-        }
-        if(carName.equals("Redder Car")) {
-            carImageName = redCarImage;
-        }
-        if(carName.equals("Yellower Car")){
-            carImageName = yellowCarImage;
-        }
-        if(carName.equals("Carser Car")){
-//            ImageView carscar = findViewById(R.id.yellowcar2);
-//            Drawable carscardrawable = carscar.;
-//            this.carImageName = carscardrawable;
-//            carImageName = "/../../../../res/drawable/carscar.jpg/";
-            carImageName = redCarImage;
-        }
-        this.carImageName = carImageName;
-    }
+//    public void setCarImageName(String carName) {
+//
+//        if (carName.equals("Red Car")) {
+//            carImageName = redCarImage;
+//        }
+//        if (carName.equals("Yellow Car")) {
+//            carImageName = yellowCarImage;
+//        }
+//        if (carName.equals("Cars Car")) {
+//            carImageName = carsCarImage;
+//        }
+//        if(carName.equals("Redder Car")) {
+//            carImageName = redCarImage;
+//        }
+//        if(carName.equals("Yellower Car")){
+//            carImageName = yellowCarImage;
+//        }
+//        if(carName.equals("Carser Car")){
+////            ImageView carscar = findViewById(R.id.yellowcar2);
+////            Drawable carscardrawable = carscar.;
+////            this.carImageName = carscardrawable;
+////            carImageName = "/../../../../res/drawable/carscar.jpg/";
+//            carImageName = redCarImage;
+//        }
+//        this.carImageName = carImageName;
+//    }
 
     public void setCarCompany(String carCompany) {
         this.carCompany = carCompany;
@@ -352,10 +352,11 @@ public class Cars extends AppCompatActivity implements Serializable{
         carArray = new ArrayList<>();
         Cars car1 = new Cars("Red Car Company", 4, 2010, 10000, true, "Red Car");
         Cars car2 = new Cars("Yellow Car Company", 6, 2015, 20000, true, "Yellow Car");
-        Cars car3 = new Cars("Cars Car Company", 8, 2020, 25000, true, "Cars Car");
+        Cars car3 = new Cars("Cars Car Company", 8, 2020, 25000, false, "Cars Car");
         Cars car4 = new Cars("Red Car Company", 4, 2012, 3000, true, "Red Car");
         Cars car5 = new Cars("Yellow Car Company", 6, 2021, 35000, true, "Yellow Car");
         Cars car6 = new Cars("Cars Car Company", 8, 2022, 40000, true, "Cars Car");
+        Cars car7 = new Cars("Question Car Company", 6, 2021, 35000, true, "Question Car");
 
         carArray.add(car1);
         carArray.add(car2);

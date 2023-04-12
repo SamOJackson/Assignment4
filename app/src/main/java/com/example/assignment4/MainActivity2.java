@@ -95,6 +95,7 @@ public class MainActivity2 extends Cars{
 //                            Cars.setTotal(total);
 //                            Cars.setAmount(amount);
                         }
+                        break;
                     case R.id.Buy2:
                         Intent = new Intent(getApplicationContext(), BuyActivity.class);
                         Intent.putExtra("Current", currentCar);

@@ -33,11 +33,19 @@ public class ViewActivity extends Cars{
         Bundle args = intent.getBundleExtra("BUNDLE");
         ArrayList<Cars> carArray = (ArrayList<Cars>) args.getSerializable("ARRAYLIST");
 
-        ImageView vehicleView;
 
         ImageView Images = findViewById(R.id.Images);
-        Drawable drawable = Drawable.createFromPath(currentCar.getCarImageName());
-        Images.setImageDrawable(drawable);
+        if (currentCar.getCarName().contains("Red Car")) {
+            Images.setImageResource(R.drawable.redcar);
+        } else if (currentCar.getCarName().contains("Yellow Car")) {
+            Images.setImageResource(R.drawable.yellowcar);
+        } else if (currentCar.getCarName().contains("Cars Car")) {
+            Images.setImageResource(R.drawable.carscar);
+        } else {
+            Images.setImageResource(R.drawable.unknown);
+        }
+        //        Drawable drawable = Drawable.createFromPath(currentCar.getCarImageName());
+//        Images.setImageDrawable(drawable);
 
         TextView textView = findViewById(R.id.companyText);
         textView.setText(currentCar.getCarCompany());

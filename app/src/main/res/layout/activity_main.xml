@@ -6,102 +6,128 @@
     android:layout_height="match_parent"
     android:background="#FFFFFF">
 
-    <Button
-        android:id="@+id/VehicleButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="160dp"
-        android:layout_marginTop="16dp"
-        android:backgroundTint="#CFCCCC"
-        android:text="@string/carName1"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#FFFFFF">
 
-    <Button
-        android:id="@+id/CompanyLink"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="128dp"
-        android:layout_marginTop="536dp"
-        android:backgroundTint="#CFCCCC"
-        android:text="@string/company"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <Button
+            android:id="@+id/NotInStock"
+            android:layout_width="97dp"
+            android:layout_height="52dp"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="536dp"
+            android:backgroundTint="#CFCCCC"
+            android:text="@string/notInStock"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <TableLayout
-        android:id="@+id/tableLayout"
-        android:layout_width="433dp"
-        android:layout_height="423dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.25"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.283">
+        <Button
+            android:id="@+id/inStock"
+            android:layout_width="97dp"
+            android:layout_height="52dp"
+            android:layout_marginStart="296dp"
+            android:layout_marginTop="536dp"
+            android:backgroundTint="#CFCCCC"
+            android:text="@string/inStock"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+        <Button
+            android:id="@+id/VehicleButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="160dp"
+            android:layout_marginTop="16dp"
+            android:backgroundTint="#CFCCCC"
+            android:text="@string/carName1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-            <ImageView
-                android:id="@+id/Vehicle1"
-                android:layout_width="148dp"
-                android:layout_height="148dp" />
+        <Button
+            android:id="@+id/CompanyLink"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="128dp"
+            android:layout_marginTop="536dp"
+            android:backgroundTint="#CFCCCC"
+            android:text="@string/company"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-            <ImageView
-                android:id="@+id/Vehicle2"
-                android:layout_width="148dp"
-                android:layout_height="148dp" />
+        <TableLayout
+            android:id="@+id/tableLayout"
+            android:layout_width="422dp"
+            android:layout_height="457dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.25"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.283">
 
-            <ImageView
-                android:id="@+id/Vehicle3"
-                android:layout_width="148dp"
-                android:layout_height="148dp" />
-        </TableRow>
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+                <ImageView
+                    android:id="@+id/Vehicles1"
+                    android:layout_width="130dp"
+                    android:layout_height="130dp" />
 
-            <ImageView
-                android:id="@+id/Vehicle4"
-                android:layout_width="wrap_content"
-                android:layout_height="148dp" />
+                <ImageView
+                    android:id="@+id/Vehicles2"
+                    android:layout_width="130dp"
+                    android:layout_height="130dp" />
 
-            <ImageView
-                android:id="@+id/Vehicle5"
-                android:layout_width="148dp"
-                android:layout_height="148dp" />
+                <ImageView
+                    android:id="@+id/Vehicles3"
+                    android:layout_width="130dp"
+                    android:layout_height="130dp" />
+            </TableRow>
 
-            <ImageView
-                android:id="@+id/Vehicle6"
-                android:layout_width="148dp"
-                android:layout_height="148dp" />
-        </TableRow>
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+                <ImageView
+                    android:id="@+id/Vehicles4"
+                    android:layout_width="130dp"
+                    android:layout_height="130dp" />
 
-            <ImageView
-                android:id="@+id/Vehicle7"
-                android:layout_width="148dp"
-                android:layout_height="148dp" />
+                <ImageView
+                    android:id="@+id/Vehicles5"
+                    android:layout_width="130dp"
+                    android:layout_height="130dp" />
 
-            <ImageView
-                android:id="@+id/Vehicle8"
-                android:layout_width="148dp"
-                android:layout_height="148dp" />
+                <ImageView
+                    android:id="@+id/Vehicles6"
+                    android:layout_width="130dp"
+                    android:layout_height="130dp" />
+            </TableRow>
 
-            <ImageView
-                android:id="@+id/Vehicle9"
-                android:layout_width="148dp"
-                android:layout_height="148dp" />
-        </TableRow>
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-    </TableLayout>
+                <ImageView
+                    android:id="@+id/Vehicle7"
+                    android:layout_width="130dp"
+                    android:layout_height="130dp" />
+
+                <ImageView
+                    android:id="@+id/Vehicle8"
+                    android:layout_width="130dp"
+                    android:layout_height="130dp" />
+
+                <ImageView
+                    android:id="@+id/Vehicle9"
+                    android:layout_width="130dp"
+                    android:layout_height="130dp" />
+            </TableRow>
+
+        </TableLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

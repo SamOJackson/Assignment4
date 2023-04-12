@@ -64,6 +64,7 @@ public class CompanyView extends Cars {
 
                         Cc.setText(CCname);
                         Address.setText(CCaddress);
+                        break;
                     default:
                         Snackbar.make(view, "unknown item selected", Snackbar.LENGTH_LONG).show();
                 }
