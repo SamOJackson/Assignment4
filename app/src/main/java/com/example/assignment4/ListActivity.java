@@ -154,7 +154,7 @@ public class ListActivity extends Cars {
                 Intent Intent;
                 Bundle args;
                 switch (selectedItemIdV) {
-                    case R.id.vehicleButton:
+                    case R.id.vehicleButton10:
                         Intent = new Intent(getApplicationContext(), MainActivity.class);
                         Intent.putExtra("Current", currentCar);
                         //                        Intent.putExtra("Array", carArray);
