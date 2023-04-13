@@ -1,9 +1,6 @@
 package com.example.assignment4;
 
-
-
 import android.content.Intent;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -16,14 +13,12 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-
 public class MainActivity2 extends Cars {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.imagesview);
-
 
         currentCar = (Cars) getIntent().getSerializableExtra("Current");
         // ArrayList<Cars> carArray = (ArrayList<Cars>) getIntent().getSerializableExtra("Array");
@@ -32,12 +27,17 @@ public class MainActivity2 extends Cars {
         ArrayList<Cars> carArray = (ArrayList<Cars>) args.getSerializable("ARRAYLIST");
         HashMap<String, Integer> carsSoldProfit = (HashMap<String, Integer>) getIntent().getSerializableExtra("PROFIT");
 
-        ImageView vehicleView;
 
-        ImageView Images = findViewById(R.id.images);
-        Drawable drawable = Drawable.createFromPath(currentCar.getCarImageName());
-        Images.setImageDrawable(drawable);
-
+        ImageView Images = findViewById(R.id.Images);
+        if (currentCar.getCarName().contains("Red Car")) {
+            Images.setImageResource(R.drawable.redcar);
+        } else if (currentCar.getCarName().contains("Yellow Car")) {
+            Images.setImageResource(R.drawable.yellowcar);
+        } else if (currentCar.getCarName().contains("Cars Car")) {
+            Images.setImageResource(R.drawable.carscar);
+        } else {
+            Images.setImageResource(R.drawable.unknown);
+        }
         TextView textView = findViewById(R.id.companyText2);
         textView.setText(currentCar.getCarCompany());
         TextView textView2 = findViewById(R.id.isAvailable3);

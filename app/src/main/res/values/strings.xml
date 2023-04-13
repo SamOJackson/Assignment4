@@ -37,4 +37,9 @@
     <string name="zero">0</string>
     <string name="notInStock">Not in Stock</string>
     <string name="inStock">In Stock</string>
+    <string name="Model">Model</string>
+    <string name="List">List</string>
+    <string name="Colour">Colour</string>
+    <string name="Date">Date Sold</string>
+
 </resources>

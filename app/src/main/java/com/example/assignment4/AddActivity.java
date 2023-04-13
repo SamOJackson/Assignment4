@@ -13,6 +13,7 @@ import com.google.android.material.snackbar.Snackbar;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Date;
 
 
 public class AddActivity extends Cars {
@@ -42,6 +43,12 @@ public class AddActivity extends Cars {
 
                 EditText addYear = findViewById(R.id.addYear);
                 EditText addPrice = findViewById(R.id.addPrice);
+
+                EditText model = findViewById(R.id.carModel);
+                EditText color = findViewById(R.id.carColour);
+
+                EditText date = findViewById(R.id.carDateSold);
+
 
                 EditText addCylinder = findViewById(R.id.addCylinder);
 
@@ -89,7 +96,7 @@ public class AddActivity extends Cars {
                             System.out.println("Exception " +e);
                         }
 
-                        carArray.add(currentCar);
+                        finalCarArray.add(currentCar);
                         Intent = new Intent(getApplicationContext(), ViewActivity.class);
                         Intent.putExtra("Current", currentCar);
 
@@ -135,6 +142,15 @@ public class AddActivity extends Cars {
 
         EditText addText = findViewById(R.id.carName2);
         EditText addCompany = findViewById(R.id.carCompany2);
+        EditText model = findViewById(R.id.carModel);
+        EditText color = findViewById(R.id.carColour);
+        EditText date = findViewById(R.id.carDateSold);
+
+
+
+        String models = model.getText().toString();
+        String colors = color.getText().toString();
+        String dates = date.getText().toString();
         CheckBox simpleCheckBox2 = (CheckBox) findViewById(R.id.available3);
         EditText addYear = findViewById(R.id.addYear);
         EditText addPrice = findViewById(R.id.addPrice);
@@ -154,8 +170,12 @@ public class AddActivity extends Cars {
             available = "Unavailable";
         }
 //        Cars addCar = new Cars(carName, carCompany, available);
-        Cars addCar = new Cars(carCompany, Integer.parseInt(CylinderAdd), Integer.parseInt(yearAdd), Integer.parseInt(priceAdd), checkedBoxState, carName);
-//        currentCar = addCar;
+//        Cars addCar = new Cars(carCompany, Integer.parseInt(CylinderAdd), Integer.parseInt(yearAdd), Integer.parseInt(priceAdd), checkedBoxState, carName);
+        Cars addCar = new Cars(carCompany, models, Integer.parseInt(CylinderAdd), Integer.parseInt(yearAdd), Integer.parseInt(priceAdd), colors, dates, checkedBoxState, carName);
+
+        //        carCompany, String carModel, int cylinders, int year, int price, String color, Date sold, boolean isAvailable, String carName
+
+        //        currentCar = addCar;
         return addCar;
     }
 }

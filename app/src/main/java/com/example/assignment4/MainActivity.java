@@ -307,8 +307,7 @@ public class MainActivity extends Cars {
                             startActivity(Intent);
                             break;
                         case R.id.NotInStock:
-                            Intent = new Intent(getApplicationContext(), NotAvailableActivity.class);                            Intent.putExtra("PROFIT",(Serializable) carsSoldProfit);
-
+                            Intent = new Intent(getApplicationContext(), NotAvailableActivity.class);
                             Intent.putExtra("PROFIT",(Serializable) carsSoldProfit);
                             Intent.putExtra("Current", currentCar);
 
@@ -320,6 +319,16 @@ public class MainActivity extends Cars {
 
                         case R.id.inStock:
                             Intent = new Intent(getApplicationContext(), AvailableActivity.class);
+                            Intent.putExtra("PROFIT",(Serializable) carsSoldProfit);
+                            Intent.putExtra("Current", currentCar);
+
+                            args = new Bundle();
+                            args.putSerializable("ARRAYLIST",(Serializable) finalCarArray);
+                            Intent.putExtra("BUNDLE",args);
+                            startActivity(Intent);
+                            break;
+                        case R.id.List:
+                            Intent = new Intent(getApplicationContext(), ListActivity.class);
                             Intent.putExtra("PROFIT",(Serializable) carsSoldProfit);
                             Intent.putExtra("Current", currentCar);
 
@@ -363,7 +372,9 @@ public class MainActivity extends Cars {
         Button InStock = findViewById(R.id.inStock);
         InStock.setOnClickListener(onClickListener);
         Button NotInStock = findViewById(R.id.NotInStock);
+        Button List = findViewById(R.id.List);
 
+        List.setOnClickListener(onClickListener);
 
         NotInStock.setOnClickListener(onClickListener);
 

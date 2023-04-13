@@ -8,146 +8,124 @@
     tools:layout_editor_absoluteX="0dp"
     tools:layout_editor_absoluteY="66dp">
 
-    <EditText
-        android:id="@+id/addPrice"
-        android:layout_width="255dp"
-        android:layout_height="65dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="@string/carPrice"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.333"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.379" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="56dp">
 
-    <EditText
-        android:id="@+id/addYear"
-        android:layout_width="255dp"
-        android:layout_height="65dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="@string/carYear"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.333"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.273" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-    <EditText
-        android:id="@+id/addCylinder"
-        android:layout_width="255dp"
-        android:layout_height="65dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="@string/carCylinders"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.333"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.477" />
+            <Button
+                android:id="@+id/vehicleButton3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="144dp"
+                android:layout_marginTop="4dp"
+                android:backgroundTint="#CFCCCC"
+                android:text="@string/carName1" />
 
-    <Button
-        android:id="@+id/backToView"
-        android:layout_width="107dp"
-        android:layout_height="64dp"
-        android:backgroundTint="#FFDADA"
-        android:text="@string/backToView"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.976" />
+            <EditText
+                android:id="@+id/carName2"
+                android:layout_width="255dp"
+                android:layout_height="65dp"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:text="@string/buttonName2" />
 
-    <CheckBox
-        android:id="@+id/available3"
-        android:layout_width="243dp"
-        android:layout_height="48dp"
-        android:text="@string/Available"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.309"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.686" />
+            <EditText
+                android:id="@+id/carModel"
+                android:layout_width="match_parent"
+                android:layout_height="65dp"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:text="@string/Model" />
 
-    <Button
-        android:id="@+id/vehicleButton3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="144dp"
-        android:layout_marginTop="4dp"
-        android:backgroundTint="#CFCCCC"
-        android:text="@string/carName1"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+            <EditText
+                android:id="@+id/carColour"
+                android:layout_width="match_parent"
+                android:layout_height="65dp"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:text="@string/Colour" />
 
-    <Button
-        android:id="@+id/add2"
-        android:layout_width="107dp"
-        android:layout_height="64dp"
-        android:backgroundTint="#FFDADA"
-        android:text="@string/add"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.879" />
+            <EditText
+                android:id="@+id/carDateSold"
+                android:layout_width="match_parent"
+                android:layout_height="65dp"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:text="@string/Date" />
 
-    <Button
-        android:id="@+id/modify"
-        android:layout_width="107dp"
-        android:layout_height="69dp"
-        android:backgroundTint="#FFDADA"
-        android:text="@string/Modify"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.78" />
+            <EditText
+                android:id="@+id/carCompany2"
+                android:layout_width="255dp"
+                android:layout_height="65dp"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:text="@string/company" />
 
-    <Button
-        android:id="@+id/submit2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:text="@string/Submit"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.049"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.755" />
+            <EditText
+                android:id="@+id/addYear"
+                android:layout_width="255dp"
+                android:layout_height="65dp"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:text="@string/carYear" />
 
-    <EditText
-        android:id="@+id/carCompany2"
-        android:layout_width="255dp"
-        android:layout_height="65dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="@string/company"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.333"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.175" />
+            <EditText
+                android:id="@+id/addCylinder"
+                android:layout_width="255dp"
+                android:layout_height="65dp"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:text="@string/carCylinders" />
 
-    <EditText
-        android:id="@+id/carName2"
-        android:layout_width="255dp"
-        android:layout_height="65dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="@string/buttonName2"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.333"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.078" />
+            <EditText
+                android:id="@+id/addPrice"
+                android:layout_width="255dp"
+                android:layout_height="65dp"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:text="@string/carPrice" />
+
+            <CheckBox
+                android:id="@+id/available3"
+                android:layout_width="243dp"
+                android:layout_height="48dp"
+                android:text="@string/Available" />
+
+            <Button
+                android:id="@+id/submit2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="@string/Submit" />
+
+            <Button
+                android:id="@+id/add2"
+                android:layout_width="107dp"
+                android:layout_height="64dp"
+                android:backgroundTint="#FFDADA"
+                android:text="@string/add" />
+
+            <Button
+                android:id="@+id/modify"
+                android:layout_width="107dp"
+                android:layout_height="69dp"
+                android:backgroundTint="#FFDADA"
+                android:text="@string/Modify" />
+
+            <Button
+                android:id="@+id/backToView"
+                android:layout_width="107dp"
+                android:layout_height="64dp"
+                android:backgroundTint="#FFDADA"
+                android:text="@string/backToView" />
+        </LinearLayout>
+    </ScrollView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -49,12 +49,22 @@ public class ModifyActivity extends Cars {
         TextView details = findViewById(R.id.CurrentCompany2);
         details.setText(currentCar.getCarCompany());
 
+        TextView currentDate = findViewById(R.id.currentDateSold);
+        currentDate.setText(currentCar.getSold());
+        TextView currentModel = findViewById(R.id.currentModel);
+        currentModel.setText(currentCar.getCarModel());
+        TextView currentColor = findViewById(R.id.currentColor);
+        currentColor.setText(currentCar.getColor());
+
+
         TextView year = findViewById(R.id.modifyYear);
         year.setText(currentCar.getYear());
         TextView cylinder = findViewById(R.id.modifyCylinder);
         cylinder.setText(currentCar.getCylinders());
         TextView price = findViewById(R.id.modifyPrice);
         price.setText(currentCar.getPrice());
+
+
 
 
         ArrayList<Cars> finalCarArray = carArray;
@@ -151,6 +161,16 @@ public class ModifyActivity extends Cars {
         EditText ModifyYear = findViewById(R.id.modifyYear2);
         EditText ModifyPrice = findViewById(R.id.modifyPrice2);
         EditText ModifyCylinder = findViewById(R.id.modifyCylinder2);
+        EditText model = findViewById(R.id.CarModel);
+        EditText color = findViewById(R.id.CarColor);
+        EditText date = findViewById(R.id.DateSold);
+
+
+
+        String models = model.getText().toString();
+        String colors = color.getText().toString();
+        String dates = date.getText().toString();
+
 
         CheckBox simpleCheckBox = (CheckBox) findViewById(R.id.available);
 
@@ -165,6 +185,9 @@ public class ModifyActivity extends Cars {
         int mCylinder = Integer.parseInt(mCylinderString);
         boolean check = simpleCheckBox.isChecked();
 
+        currentCar.setCarModel(models);
+        currentCar.setSold(dates);
+        currentCar.setColor(colors);
 
         currentCar.setCarName(cname);
         currentCar.setCarCompany(cmp);
@@ -186,7 +209,12 @@ public class ModifyActivity extends Cars {
         price.setText(currentCar.getPrice());
         TextView year = findViewById(R.id.modifyYear);
         year.setText(currentCar.getYear());
-
+        TextView currentDate = findViewById(R.id.currentDateSold);
+        currentDate.setText(currentCar.getSold());
+        TextView currentModel = findViewById(R.id.currentModel);
+        currentModel.setText(currentCar.getCarModel());
+        TextView currentColor = findViewById(R.id.currentColor);
+        currentColor.setText(currentCar.getColor());
 
         TextView textView2 = findViewById(R.id.available2);
         String text;

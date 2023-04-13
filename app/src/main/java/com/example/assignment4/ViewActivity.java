@@ -47,6 +47,15 @@ public class ViewActivity extends Cars{
 
         TextView textView = findViewById(R.id.companyText);
         textView.setText(currentCar.getCarCompany());
+
+        TextView model = findViewById(R.id.Model);
+        model.setText(currentCar.getCarCompany());
+        TextView sold = findViewById(R.id.sold);
+        sold.setText(currentCar.getCarCompany());
+        TextView colour = findViewById(R.id.colour);
+        colour.setText(currentCar.getCarCompany());
+
+
         TextView textView2 = findViewById(R.id.isAvailable2);
         String text;
         if(!currentCar.getIsAvailable())
@@ -57,7 +66,7 @@ public class ViewActivity extends Cars{
             text = "Available";
         }
         textView2.setText(text);
-        TextView details = findViewById(R.id.Details2);
+        TextView details = findViewById(R.id.Details1);
         details.setText(currentCar.getCarName());
 
 
@@ -79,6 +88,11 @@ public class ViewActivity extends Cars{
                 switch (selectedItemIdV){
                     case R.id.vehicleButton:
                         Intent = new Intent(getApplicationContext(), MainActivity.class);
+                        Intent.putExtra("Current", currentCar);
+//                        Intent.putExtra("Array", carArray);
+                        args = new Bundle();
+                        args.putSerializable("ARRAYLIST",(Serializable)carArray);
+                        Intent.putExtra("BUNDLE",args);
                         startActivity(Intent);
                         break;
                     case R.id.Add:

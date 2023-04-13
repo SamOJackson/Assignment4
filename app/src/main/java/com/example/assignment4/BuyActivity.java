@@ -67,12 +67,12 @@ public class BuyActivity extends Cars {
                     case R.id.submit3:
                         Intent = new Intent(getApplicationContext(), ViewActivity.class);
                         Person person = submitting();
-                        Bundle bundle = new Bundle();
-                        bundle.putSerializable("PERSON",(Serializable) person);
+//                        Bundle bundle = new Bundle();
+//                        bundle.putSerializable("PERSON",(Serializable) person);
 
                         Cars.setCarsSold(Cars.getCarsSold() + getAmount());
                         Cars.setProfit(Cars.getProfit() + getTotal());
-
+                        currentCar.setIsAvailable(false);
 //                        Intent.putExtra("PROFIT", finalprofit[0]);
 //                        Intent.putExtra("CARSSOLD", finalcarssold[0]);
                         Intent.putExtra("PROFIT",(Serializable) carsSoldProfit);

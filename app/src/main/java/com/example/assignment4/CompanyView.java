@@ -10,6 +10,7 @@ import android.widget.TextView;
 import com.google.android.material.snackbar.Snackbar;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.HashMap;
 
 public class CompanyView extends Cars {
@@ -26,7 +27,13 @@ public class CompanyView extends Cars {
 //        Intent intent = getIntent();
 //        Bundle args = intent.getBundleExtra("BUNDLE");
 //        ArrayList<Cars> carArray = (ArrayList<Cars>) args.getSerializable("ARRAYLIST");
-//
+
+        currentCar = (Cars) getIntent().getSerializableExtra("Current");
+        // ArrayList<Cars> carArray = (ArrayList<Cars>) getIntent().getSerializableExtra("Array");
+        Intent intent = getIntent();
+        Bundle args = intent.getBundleExtra("BUNDLE");
+        ArrayList<Cars> carArray = (ArrayList<Cars>) args.getSerializable("ARRAYLIST");
+
         TextView Cc = findViewById(R.id.CCompanyName2);
         Cc.setText(Cars.getCCompanyName());
         TextView Address = findViewById(R.id.companyAddress2);
@@ -37,6 +44,8 @@ public class CompanyView extends Cars {
 //        carsSoldProfit.get("Profit");
 //        carsSold.setText(carsSoldProfit.get("Profit"));
 //        profit.setText(carsSoldProfit.get("CarsSold"));
+
+        ArrayList<Cars> finalCarArray = carArray;
         View.OnClickListener onClickListener = new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -49,7 +58,7 @@ public class CompanyView extends Cars {
                         Intent = new Intent(getApplicationContext(), MainActivity.class);
                         Intent.putExtra("Current", currentCar);
                         args = new Bundle();
-                        args.putSerializable("ARRAYLIST", (Serializable) carArray);
+                        args.putSerializable("ARRAYLIST", (Serializable) finalCarArray);
                         Intent.putExtra("BUNDLE", args);
                         Intent.putExtra("PROFIT", (Serializable) carsSoldProfit);
 

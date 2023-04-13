@@ -10,7 +10,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.Date;
+//
 
 public class Cars extends AppCompatActivity implements Serializable{
     private ArrayList<Cars> carArray = new ArrayList<>();
@@ -33,7 +33,7 @@ public class Cars extends AppCompatActivity implements Serializable{
     private int year;
     private int price;
     private String color;
-    private Date sold;
+    private String sold;
     private boolean isAvailable;
     private String carName;
     public static Cars currentCar;
@@ -42,6 +42,26 @@ public class Cars extends AppCompatActivity implements Serializable{
 //    private final String carsCarImage = "![](../../../../res/drawable/carscar.jpg)";
 
     public Cars() {
+    }
+
+    public Cars(String carCompany, String carModel, int cylinders, int year, int price, String color, String sold, boolean isAvailable, String carName) {
+        this.carCompany = carCompany;
+        this.carModel = carModel;
+        this.cylinders = cylinders;
+        this.year = year;
+        this.price = price;
+        this.color = color;
+        this.sold = sold;
+        this.isAvailable = isAvailable;
+        this.carName = carName;
+    }
+
+    public String getCarModel() {
+        return carModel;
+    }
+
+    public void setCarModel(String carModel) {
+        this.carModel = carModel;
     }
 
     public static String getCCompanyName() {
@@ -85,7 +105,7 @@ public class Cars extends AppCompatActivity implements Serializable{
         this.carName = carName;
     }
 
-    public Cars(int carId, String carImageName, String carCompany, String carModel, int cylinders, int year, int price, String color, Date sold, boolean isAvailable, String carName) {
+    public Cars(int carId, String carImageName, String carCompany, String carModel, int cylinders, int year, int price, String color, String sold, boolean isAvailable, String carName) {
         this.carId = carId;
         this.carImageName = carImageName;
         this.carCompany = carCompany;
@@ -327,11 +347,11 @@ public class Cars extends AppCompatActivity implements Serializable{
         this.color = color;
     }
 
-    public Date getSold() {
+    public String getSold() {
         return sold;
     }
 
-    public void setSold(Date sold) {
+    public void setSold(String sold) {
         this.sold = sold;
     }
 
@@ -350,13 +370,34 @@ public class Cars extends AppCompatActivity implements Serializable{
     public ArrayList<Cars> createArray() {
 
         carArray = new ArrayList<>();
-        Cars car1 = new Cars("Red Car Company", 4, 2010, 10000, true, "Red Car");
-        Cars car2 = new Cars("Yellow Car Company", 6, 2015, 20000, true, "Yellow Car");
-        Cars car3 = new Cars("Cars Car Company", 8, 2020, 25000, false, "Cars Car");
-        Cars car4 = new Cars("Red Car Company", 4, 2012, 3000, true, "Red Car");
-        Cars car5 = new Cars("Yellow Car Company", 6, 2021, 35000, true, "Yellow Car");
-        Cars car6 = new Cars("Cars Car Company", 8, 2022, 40000, true, "Cars Car");
-        Cars car7 = new Cars("Question Car Company", 6, 2021, 35000, false, "Question Car");
+//        Cars car1 = new Cars("Red Car Company", 4, 2010, 10000, true, "Red Car");
+//        Cars car2 = new Cars("Yellow Car Company", 6, 2015, 20000, true, "Yellow Car");
+//        Cars car3 = new Cars("Cars Car Company", 8, 2020, 25000, false, "Cars Car");
+//        Cars car4 = new Cars("Red Car Company", 4, 2012, 3000, true, "Red Car");
+//        Cars car5 = new Cars("Yellow Car Company", 6, 2021, 35000, true, "Yellow Car");
+//        Cars car6 = new Cars("Cars Car Company", 8, 2022, 40000, true, "Cars Car");
+//        Cars car7 = new Cars("Question Car Company", 6, 2021, 35000, false, "Question Car");
+
+        Cars car1 = new Cars("Red Car Company", "GT", 4, 2010, 10000, "red", "", true, "Red Car");
+        Cars car2 = new Cars("Yellow Car Company","SSR", 6, 2015, 20000, "yellow", "", true, "Yellow Car");
+        Cars car3 = new Cars("Cars Car Company","RT", 8, 2020, 25000, "yellow", "09-12-22",false, "Cars Car");
+        Cars car4 = new Cars("Red Car Company","SSR", 4, 2012, 3000, "red","", true, "Red Car");
+        Cars car5 = new Cars("Yellow Car Company", "GT", 6, 2021, 35000,"Yellow", "",true, "Yellow Car");
+        Cars car6 = new Cars("Cars Car Company", "RX", 8, 2022, 40000,"Yellow","", true, "Cars Car");
+        Cars car7 = new Cars("Question Car Company", "Sedan", 6, 2021, 35000, "Red", "09-12-22", false, "Question Car");
+
+
+//        carCompany = carCompany;
+//        this.carModel = carModel;
+//        this.cylinders = cylinders;
+//        this.year = year;
+//        this.price = price;
+//        this.color = color;
+//        this.sold = sold;
+//        this.isAvailable = isAvailable;
+//        this.carName = carName;
+//    }
+
 
         carArray.add(car1);
         carArray.add(car2);
