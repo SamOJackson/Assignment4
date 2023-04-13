@@ -24,10 +24,9 @@ public class MainActivity extends Cars {
 
         Intent intent = getIntent();
         Bundle args = intent.getBundleExtra("BUNDLE");
+        ArrayList<Cars> carArray = (ArrayList<Cars>) args.getSerializable("ARRAYLIST");
         if((ArrayList<Cars>) args.getSerializable("ARRAYLIST") == null) {
-            ArrayList<Cars> carArray = createArray();
-        }else {
-            ArrayList<Cars> carArray = (ArrayList<Cars>) args.getSerializable("ARRAYLIST");
+            carArray = createArray();
         }
 
 //        ArrayList<Cars> carArray2 = (ArrayList<Cars>) getIntent().getSerializableExtra("Array");
