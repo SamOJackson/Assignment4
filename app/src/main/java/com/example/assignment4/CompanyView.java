@@ -45,8 +45,7 @@ public class CompanyView extends Cars {
 //        carsSold.setText(carsSoldProfit.get("Profit"));
 //        profit.setText(carsSoldProfit.get("CarsSold"));
 
-        ArrayList<Cars> finalCarArray = carArray;
-        View.OnClickListener onClickListener = new View.OnClickListener() {
+         View.OnClickListener onClickListener = new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
@@ -58,7 +57,7 @@ public class CompanyView extends Cars {
                         Intent = new Intent(getApplicationContext(), MainActivity.class);
                         Intent.putExtra("Current", currentCar);
                         args = new Bundle();
-                        args.putSerializable("ARRAYLIST", (Serializable) finalCarArray);
+                        args.putSerializable("ARRAYLIST", (Serializable) carArray);
                         Intent.putExtra("BUNDLE", args);
                         Intent.putExtra("PROFIT", (Serializable) carsSoldProfit);
 

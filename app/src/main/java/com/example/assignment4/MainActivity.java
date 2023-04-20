@@ -25,9 +25,6 @@ public class MainActivity extends Cars {
         Intent intent = getIntent();
         Bundle args = intent.getBundleExtra("BUNDLE");
         ArrayList<Cars> carArray = (ArrayList<Cars>) args.getSerializable("ARRAYLIST");
-        if((ArrayList<Cars>) args.getSerializable("ARRAYLIST") == null) {
-            carArray = createArray();
-        }
 
 //        ArrayList<Cars> carArray2 = (ArrayList<Cars>) getIntent().getSerializableExtra("Array");
 //        currentCar = (Cars) getIntent().getSerializableExtra("Current");
@@ -37,7 +34,7 @@ public class MainActivity extends Cars {
         carsSoldProfit.put("Profit", 0);
 
         Drawable drawable;
-        ArrayList<Cars> finalCarArray = carArray;
+      //  ArrayList<Cars> carArray = carArray;
 //        for (Cars c: carArray) {
          for(int i = 0; i < 10; i ++ ) {
              try {
@@ -45,11 +42,11 @@ public class MainActivity extends Cars {
                      ImageView vehicle1 = findViewById(R.id.Vehicles1);
 //                    drawable = Drawable.createFromPath(carArray.get(i).getCarImageName());
 //                    vehicle1.setImageDrawable(drawable);
-                     if (finalCarArray.get(i).getCarName().contains("Red Car")) {
+                     if (carArray.get(i).getCarName().contains("Red Car")) {
                          vehicle1.setImageResource(R.drawable.redcar);
-                     } else if (finalCarArray.get(i).getCarName().contains( "Yellow Car")) {
+                     } else if (carArray.get(i).getCarName().contains( "Yellow Car")) {
                          vehicle1.setImageResource(R.drawable.yellowcar);
-                     } else if (finalCarArray.get(i).getCarName().contains( "Cars Car")) {
+                     } else if (carArray.get(i).getCarName().contains( "Cars Car")) {
                          vehicle1.setImageResource(R.drawable.carscar);
                      } else{
                          vehicle1.setImageResource(R.drawable.unknown);
@@ -57,11 +54,11 @@ public class MainActivity extends Cars {
                  }
                  if (i == 1) {
                      ImageView vehicle2 = findViewById(R.id.Vehicles2);
-                     if (finalCarArray.get(i).getCarName().contains("Red Car")) {
+                     if (carArray.get(i).getCarName().contains("Red Car")) {
                          vehicle2.setImageResource(R.drawable.redcar);
-                     } else if (finalCarArray.get(i).getCarName().contains("Yellow Car")) {
+                     } else if (carArray.get(i).getCarName().contains("Yellow Car")) {
                          vehicle2.setImageResource(R.drawable.yellowcar);
-                     } else if (finalCarArray.get(i).getCarName().contains("Cars Car")) {
+                     } else if (carArray.get(i).getCarName().contains("Cars Car")) {
                          vehicle2.setImageResource(R.drawable.carscar);
                      } else{
                          vehicle2.setImageResource(R.drawable.unknown);
@@ -69,11 +66,11 @@ public class MainActivity extends Cars {
                  }
                  if (i == 2) {
                      ImageView vehicle3 = findViewById(R.id.Vehicles3);
-                     if (finalCarArray.get(i).getCarName().contains("Red Car")) {
+                     if (carArray.get(i).getCarName().contains("Red Car")) {
                          vehicle3.setImageResource(R.drawable.redcar);
-                     } else if (finalCarArray.get(i).getCarName().contains("Yellow Car")) {
+                     } else if (carArray.get(i).getCarName().contains("Yellow Car")) {
                          vehicle3.setImageResource(R.drawable.yellowcar);
-                     } else if (finalCarArray.get(i).getCarName().contains("Cars Car")) {
+                     } else if (carArray.get(i).getCarName().contains("Cars Car")) {
                          vehicle3.setImageResource(R.drawable.carscar);
                      } else{
                          vehicle3.setImageResource(R.drawable.unknown);
@@ -81,11 +78,11 @@ public class MainActivity extends Cars {
                  }
                  if (i == 3) {
                      ImageView vehicle4 = findViewById(R.id.Vehicles4);
-                     if (finalCarArray.get(i).getCarName().contains( "Red Car")) {
+                     if (carArray.get(i).getCarName().contains( "Red Car")) {
                          vehicle4.setImageResource(R.drawable.redcar);
-                     } else if (finalCarArray.get(i).getCarName().contains("Yellow Car")) {
+                     } else if (carArray.get(i).getCarName().contains("Yellow Car")) {
                          vehicle4.setImageResource(R.drawable.yellowcar);
-                     } else if (finalCarArray.get(i).getCarName().contains("Cars Car")) {
+                     } else if (carArray.get(i).getCarName().contains("Cars Car")) {
                          vehicle4.setImageResource(R.drawable.carscar);
                      } else{
                          vehicle4.setImageResource(R.drawable.unknown);
@@ -93,11 +90,11 @@ public class MainActivity extends Cars {
                  }
                  if (i == 4) {
                      ImageView vehicle5 = findViewById(R.id.Vehicles5);
-                     if (finalCarArray.get(i).getCarName().contains( "Red Car")) {
+                     if (carArray.get(i).getCarName().contains( "Red Car")) {
                          vehicle5.setImageResource(R.drawable.redcar);
-                     } else if (finalCarArray.get(i).getCarName().contains("Yellow Car")) {
+                     } else if (carArray.get(i).getCarName().contains("Yellow Car")) {
                          vehicle5.setImageResource(R.drawable.yellowcar);
-                     } else if (finalCarArray.get(i).getCarName().contains("Cars Car")) {
+                     } else if (carArray.get(i).getCarName().contains("Cars Car")) {
                          vehicle5.setImageResource(R.drawable.carscar);
                      } else{
                          vehicle5.setImageResource(R.drawable.unknown);
@@ -105,11 +102,11 @@ public class MainActivity extends Cars {
                  }
                  if (i == 5) {
                      ImageView vehicle6 = findViewById(R.id.Vehicles6);
-                     if (finalCarArray.get(i).getCarName().contains("Red Car")) {
+                     if (carArray.get(i).getCarName().contains("Red Car")) {
                          vehicle6.setImageResource(R.drawable.redcar);
-                     } else if (finalCarArray.get(i).getCarName().contains("Yellow Car")) {
+                     } else if (carArray.get(i).getCarName().contains("Yellow Car")) {
                          vehicle6.setImageResource(R.drawable.yellowcar);
-                     } else if (finalCarArray.get(i).getCarName().contains("Cars Car")) {
+                     } else if (carArray.get(i).getCarName().contains("Cars Car")) {
                          vehicle6.setImageResource(R.drawable.carscar);
                      } else{
                          vehicle6.setImageResource(R.drawable.unknown);
@@ -117,11 +114,11 @@ public class MainActivity extends Cars {
                  }
                  if (i == 6) {
                      ImageView vehicle7 = findViewById(R.id.Vehicle7);
-                     if (finalCarArray.get(i).getCarName().contains( "Red Car")) {
+                     if (carArray.get(i).getCarName().contains( "Red Car")) {
                          vehicle7.setImageResource(R.drawable.redcar);
-                     } else if (finalCarArray.get(i).getCarName().contains( "Yellow Car")) {
+                     } else if (carArray.get(i).getCarName().contains( "Yellow Car")) {
                          vehicle7.setImageResource(R.drawable.yellowcar);
-                     } else if (finalCarArray.get(i).getCarName().contains( "Cars Car")) {
+                     } else if (carArray.get(i).getCarName().contains( "Cars Car")) {
                          vehicle7.setImageResource(R.drawable.carscar);
                      } else{
                          vehicle7.setImageResource(R.drawable.unknown);
@@ -129,11 +126,11 @@ public class MainActivity extends Cars {
                  }
                  if (i == 7) {
                      ImageView vehicle8 = findViewById(R.id.Vehicle8);
-                     if (finalCarArray.get(i).getCarName().contains("Red Car")) {
+                     if (carArray.get(i).getCarName().contains("Red Car")) {
                          vehicle8.setImageResource(R.drawable.redcar);
-                     } else if (finalCarArray.get(i).getCarName().contains("Yellow Car")) {
+                     } else if (carArray.get(i).getCarName().contains("Yellow Car")) {
                          vehicle8.setImageResource(R.drawable.yellowcar);
-                     } else if (finalCarArray.get(i).getCarName().contains("Cars Car")) {
+                     } else if (carArray.get(i).getCarName().contains("Cars Car")) {
                          vehicle8.setImageResource(R.drawable.carscar);
                      } else{
                          vehicle8.setImageResource(R.drawable.unknown);
@@ -141,11 +138,11 @@ public class MainActivity extends Cars {
                  }
                  if (i == 8) {
                      ImageView vehicle9 = findViewById(R.id.Vehicle9);
-                     if (finalCarArray.get(i).getCarName().contains("Red Car")) {
+                     if (carArray.get(i).getCarName().contains("Red Car")) {
                          vehicle9.setImageResource(R.drawable.redcar);
-                     } else if (finalCarArray.get(i).getCarName().contains("Yellow Car")) {
+                     } else if (carArray.get(i).getCarName().contains("Yellow Car")) {
                          vehicle9.setImageResource(R.drawable.yellowcar);
-                     } else if (finalCarArray.get(i).getCarName().contains("Cars Car")) {
+                     } else if (carArray.get(i).getCarName().contains("Cars Car")) {
                          vehicle9.setImageResource(R.drawable.carscar);
                      } else{
                          vehicle9.setImageResource(R.drawable.unknown);
@@ -153,7 +150,7 @@ public class MainActivity extends Cars {
                  }
              }catch(Exception e)
              {
-                 Toast.makeText(getApplicationContext(),"Out of Bounds Exception", Toast.LENGTH_LONG).show();
+                 Toast.makeText(getApplicationContext(),"O", Toast.LENGTH_LONG).show();
              }
          }
 
@@ -173,46 +170,46 @@ public class MainActivity extends Cars {
                             Intent.putExtra("Current", currentCar);
 
                             args = new Bundle();
-                            args.putSerializable("ARRAYLIST",(Serializable) finalCarArray);
+                            args.putSerializable("ARRAYLIST",(Serializable) carArray);
                             Intent.putExtra("BUNDLE",args);
                             startActivity(Intent);
                             break;
                         case R.id.Vehicles1:
                             Intent = new Intent(getApplicationContext(), ViewActivity.class);
 //                            Intent.putExtra("Id", 1);
-                            currentCar = finalCarArray.get(0);
+                            currentCar = carArray.get(0);
                             Intent.putExtra("Current", currentCar);
 //                            Intent.putExtra("Array", carArray);
                             Intent.putExtra("PROFIT",(Serializable) carsSoldProfit);
 
                             args = new Bundle();
-                            args.putSerializable("ARRAYLIST",(Serializable) finalCarArray);
+                            args.putSerializable("ARRAYLIST",(Serializable) carArray);
                             Intent.putExtra("BUNDLE",args);
                             startActivity(Intent);
                             break;
                         case R.id.Vehicles2:
                             Intent = new Intent(getApplicationContext(), ViewActivity.class);
 //                            Intent.putExtra("Id", 2);
-                            currentCar = finalCarArray.get(1);
+                            currentCar = carArray.get(1);
                             Intent.putExtra("Current", currentCar);
                             //                            Intent.putExtra("Array", carArray);
                             Intent.putExtra("PROFIT",(Serializable) carsSoldProfit);
 
                             args = new Bundle();
-                            args.putSerializable("ARRAYLIST",(Serializable) finalCarArray);
+                            args.putSerializable("ARRAYLIST",(Serializable) carArray);
                             Intent.putExtra("BUNDLE",args);
                             startActivity(Intent);
                             break;
                         case R.id.Vehicles3:
                             Intent = new Intent(getApplicationContext(), ViewActivity.class);
 //                            Intent.putExtra("Id", 3);
-                            currentCar = finalCarArray.get(2);
+                            currentCar = carArray.get(2);
                             Intent.putExtra("Current", currentCar);
                             //                            Intent.putExtra("Array", carArray);
                             Intent.putExtra("PROFIT",(Serializable) carsSoldProfit);
 
                             args = new Bundle();
-                            args.putSerializable("ARRAYLIST",(Serializable) finalCarArray);
+                            args.putSerializable("ARRAYLIST",(Serializable) carArray);
                             Intent.putExtra("BUNDLE",args);
                             startActivity(Intent);
                             break;
@@ -220,79 +217,71 @@ public class MainActivity extends Cars {
                             Intent = new Intent(getApplicationContext(), ViewActivity.class);
 //                            Intent.putExtra("Id", 4);
                             Intent.putExtra("PROFIT",(Serializable) carsSoldProfit);
-
-                            currentCar = finalCarArray.get(3);
+                            currentCar = carArray.get(3);
 //                            Intent.putExtra("Array", carArray);
-                            Intent.putExtra("PROFIT",(Serializable) carsSoldProfit);
                             Intent.putExtra("Current", currentCar);
-
                             args = new Bundle();
-                            args.putSerializable("ARRAYLIST",(Serializable) finalCarArray);
+                            args.putSerializable("ARRAYLIST",(Serializable) carArray);
                             Intent.putExtra("BUNDLE",args);
                             startActivity(Intent);
                             break;
                         case R.id.Vehicles5:
                             Intent = new Intent(getApplicationContext(), ViewActivity.class);
 //                            Intent.putExtra("Id", 5);
-                            currentCar = finalCarArray.get(4);
+                            currentCar = carArray.get(4);
 //                            Intent.putExtra("Array", carArray);
                             Intent.putExtra("PROFIT",(Serializable) carsSoldProfit);
-
                             Intent.putExtra("Current", currentCar);
                             args = new Bundle();
-                            args.putSerializable("ARRAYLIST",(Serializable) finalCarArray);
+                            args.putSerializable("ARRAYLIST",(Serializable) carArray);
                             Intent.putExtra("BUNDLE",args);
                             startActivity(Intent);
                             break;
                         case R.id.Vehicles6:
                             Intent = new Intent(getApplicationContext(), ViewActivity.class);
 //                            Intent.putExtra("Id", 6);
-                            currentCar = finalCarArray.get(5);
+                            currentCar = carArray.get(5);
 //                            Intent.putExtra("Array", carArray);
                             Intent.putExtra("PROFIT",(Serializable) carsSoldProfit);
-
                             Intent.putExtra("Current", currentCar);
                             args = new Bundle();
-                            args.putSerializable("ARRAYLIST",(Serializable) finalCarArray);
+                            args.putSerializable("ARRAYLIST",(Serializable) carArray);
                             Intent.putExtra("BUNDLE",args);
                             startActivity(Intent);
                             break;
                         case R.id.Vehicle7:
                             Intent = new Intent(getApplicationContext(), ViewActivity.class);
 //                            Intent.putExtra("Id", 7);
-                            currentCar = finalCarArray.get(6);
+                            currentCar = carArray.get(6);
 //                            Intent.putExtra("Array", carArray);
                             Intent.putExtra("PROFIT",(Serializable) carsSoldProfit);
-
                             Intent.putExtra("Current", currentCar);
                             args = new Bundle();
-                            args.putSerializable("ARRAYLIST",(Serializable) finalCarArray);
+                            args.putSerializable("ARRAYLIST",(Serializable) carArray);
                             Intent.putExtra("BUNDLE",args);
                             startActivity(Intent);
                             break;
                         case R.id.Vehicle8:
                             Intent = new Intent(getApplicationContext(), ViewActivity.class);
 //                            Intent.putExtra("Id", 8);
-                            currentCar = finalCarArray.get(7);
+                            currentCar = carArray.get(7);
 //                            Intent.putExtra("Array", carArray);
                             Intent.putExtra("PROFIT",(Serializable) carsSoldProfit);
-
                             Intent.putExtra("Current", currentCar);
                             args = new Bundle();
-                            args.putSerializable("ARRAYLIST",(Serializable) finalCarArray);
+                            args.putSerializable("ARRAYLIST",(Serializable) carArray);
                             Intent.putExtra("BUNDLE",args);
                             startActivity(Intent);
                             break;
                         case R.id.Vehicle9:
                             Intent = new Intent(getApplicationContext(), ViewActivity.class);
 //                            Intent.putExtra("Id", 9);
-                            currentCar = finalCarArray.get(8);
+                            currentCar = carArray.get(8);
 //                            Intent.putExtra("Array", carArray);
                             Intent.putExtra("PROFIT",(Serializable) carsSoldProfit);
-
                             Intent.putExtra("Current", currentCar);
                             args = new Bundle();
-                            args.putSerializable("ARRAYLIST",(Serializable) finalCarArray);
+                            args.putSerializable("ARRAYLIST",(Serializable) carArray);
                             Intent.putExtra("BUNDLE",args);
                             startActivity(Intent);
                             break;
@@ -301,7 +290,7 @@ public class MainActivity extends Cars {
                             Intent.putExtra("PROFIT",(Serializable) carsSoldProfit);
                             Intent.putExtra("Current", currentCar);
                             args = new Bundle();
-                            args.putSerializable("ARRAYLIST",(Serializable) finalCarArray);
+                            args.putSerializable("ARRAYLIST",(Serializable) carArray);
                             Intent.putExtra("BUNDLE",args);
 
                             startActivity(Intent);
@@ -312,7 +301,7 @@ public class MainActivity extends Cars {
                             Intent.putExtra("Current", currentCar);
 
                             args = new Bundle();
-                            args.putSerializable("ARRAYLIST",(Serializable) finalCarArray);
+                            args.putSerializable("ARRAYLIST",(Serializable) carArray);
                             Intent.putExtra("BUNDLE",args);
                             startActivity(Intent);
                             break;
@@ -323,7 +312,7 @@ public class MainActivity extends Cars {
                             Intent.putExtra("Current", currentCar);
 
                             args = new Bundle();
-                            args.putSerializable("ARRAYLIST",(Serializable) finalCarArray);
+                            args.putSerializable("ARRAYLIST",(Serializable) carArray);
                             Intent.putExtra("BUNDLE",args);
                             startActivity(Intent);
                             break;
@@ -333,18 +322,18 @@ public class MainActivity extends Cars {
                             Intent.putExtra("Current", currentCar);
 
                             args = new Bundle();
-                            args.putSerializable("ARRAYLIST",(Serializable) finalCarArray);
+                            args.putSerializable("ARRAYLIST",(Serializable) carArray);
                             Intent.putExtra("BUNDLE",args);
                             startActivity(Intent);
                             break;
                         default:
 //                            Intent = new Intent(getApplicationContext(), ViewActivity.class);
 //                            Intent.putExtra("Id", 1);
-//                            currentCar = finalCarArray.get(0);
+//                            currentCar = carArray.get(0);
 //                            Intent.putExtra("Current", currentCar);
 ////                            Intent.putExtra("Array", carArray);
 //                            args = new Bundle();
-//                            args.putSerializable("ARRAYLIST",(Serializable) finalCarArray);
+//                            args.putSerializable("ARRAYLIST",(Serializable) carArray);
 //                            Intent.putExtra("BUNDLE",args);
 //                            startActivity(Intent);
                             Snackbar.make(view, "unknown item selected", Snackbar.LENGTH_LONG).show();
@@ -366,8 +355,6 @@ public class MainActivity extends Cars {
         ImageView View8 = findViewById(R.id.Vehicle8);
         ImageView View9 = findViewById(R.id.Vehicle9);
 
-
-
         Button Company = findViewById(R.id.CompanyLink);
         Button InStock = findViewById(R.id.inStock);
         InStock.setOnClickListener(onClickListener);
@@ -377,7 +364,6 @@ public class MainActivity extends Cars {
         List.setOnClickListener(onClickListener);
 
         NotInStock.setOnClickListener(onClickListener);
-
 
         Company.setOnClickListener(onClickListener);
 

@@ -26,6 +26,7 @@ public class SplashActivity extends Cars {
 
         Runnable task = () ->{
             Intent intent = new Intent(this, MainActivity.class);
+
             Bundle args = new Bundle();
             args.putSerializable("ARRAYLIST", (Serializable) carArray);
             intent.putExtra("BUNDLE", args);

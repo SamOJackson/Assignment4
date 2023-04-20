@@ -17,7 +17,7 @@ import java.util.HashMap;
 
 
 public class ViewActivity extends Cars{
-
+    int J;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,8 +29,14 @@ public class ViewActivity extends Cars{
         // ArrayList<Cars> carArray = (ArrayList<Cars>) getIntent().getSerializableExtra("Array");
         Intent intent = getIntent();
         Bundle args = intent.getBundleExtra("BUNDLE");
-        ArrayList<Cars> carArray = (ArrayList<Cars>) args.getSerializable("ARRAYLIST");
 
+        ArrayList<Cars> carArray = (ArrayList<Cars>) args.getSerializable("ARRAYLIST");
+        for (int i = 0; i < carArray.size(); i++) {
+            if (carArray.get(i).getCarName() == currentCar.getCarName()){
+                J = i;
+            }
+        }
+        carArray.set(J, currentCar);
 
         ImageView Images = findViewById(R.id.Images);
         if (currentCar.getCarName().contains("Red Car")) {

@@ -30,7 +30,6 @@ public class AddActivity extends Cars {
         Bundle args = intent.getBundleExtra("BUNDLE");
         ArrayList<Cars> carArray = (ArrayList<Cars>) args.getSerializable("ARRAYLIST");
 
-        ArrayList<Cars> finalCarArray = carArray;
 
         View.OnClickListener onClickListener = new View.OnClickListener() {
             @Override
@@ -62,7 +61,7 @@ public class AddActivity extends Cars {
 
                         Intent.putExtra("Current", currentCar);
                         args = new Bundle();
-                        args.putSerializable("ARRAYLIST",(Serializable) finalCarArray);
+                        args.putSerializable("ARRAYLIST",(Serializable) carArray);
                         Intent.putExtra("BUNDLE",args);
 
                         startActivity(Intent);
@@ -71,7 +70,7 @@ public class AddActivity extends Cars {
                         Intent = new Intent(getApplicationContext(), AddActivity.class);
                         Intent.putExtra("Current", currentCar);
                         args = new Bundle();
-                        args.putSerializable("ARRAYLIST",(Serializable) finalCarArray);
+                        args.putSerializable("ARRAYLIST",(Serializable) carArray);
                         Intent.putExtra("BUNDLE",args);
 
                         startActivity(Intent);
@@ -82,7 +81,7 @@ public class AddActivity extends Cars {
                         Intent.putExtra("Current", currentCar);
 
                         args = new Bundle();
-                        args.putSerializable("ARRAYLIST",(Serializable) finalCarArray);
+                        args.putSerializable("ARRAYLIST",(Serializable) carArray);
                         Intent.putExtra("BUNDLE",args);
 
                         startActivity(Intent);
@@ -96,12 +95,12 @@ public class AddActivity extends Cars {
                             System.out.println("Exception " +e);
                         }
 
-                        finalCarArray.add(currentCar);
+                        carArray.add(currentCar);
                         Intent = new Intent(getApplicationContext(), ViewActivity.class);
                         Intent.putExtra("Current", currentCar);
 
                         args = new Bundle();
-                        args.putSerializable("ARRAYLIST",(Serializable) finalCarArray);
+                        args.putSerializable("ARRAYLIST",(Serializable) carArray);
                         Intent.putExtra("BUNDLE",args);
 
                         startActivity(Intent);
@@ -111,7 +110,7 @@ public class AddActivity extends Cars {
                         Intent.putExtra("Current", currentCar);
 
                         args = new Bundle();
-                        args.putSerializable("ARRAYLIST",(Serializable) finalCarArray);
+                        args.putSerializable("ARRAYLIST",(Serializable) carArray);
                         Intent.putExtra("BUNDLE",args);
 
                         startActivity(Intent);
@@ -146,8 +145,6 @@ public class AddActivity extends Cars {
         EditText color = findViewById(R.id.carColour);
         EditText date = findViewById(R.id.carDateSold);
 
-
-
         String models = model.getText().toString();
         String colors = color.getText().toString();
         String dates = date.getText().toString();
@@ -155,7 +152,6 @@ public class AddActivity extends Cars {
         EditText addYear = findViewById(R.id.addYear);
         EditText addPrice = findViewById(R.id.addPrice);
         EditText addCylinder = findViewById(R.id.addCylinder);
-
 
         String carName = addText.getText().toString();
         String carCompany = addCompany.getText().toString();
@@ -174,7 +170,6 @@ public class AddActivity extends Cars {
         Cars addCar = new Cars(carCompany, models, Integer.parseInt(CylinderAdd), Integer.parseInt(yearAdd), Integer.parseInt(priceAdd), colors, dates, checkedBoxState, carName);
 
         //        carCompany, String carModel, int cylinders, int year, int price, String color, Date sold, boolean isAvailable, String carName
-
         //        currentCar = addCar;
         return addCar;
     }

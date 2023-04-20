@@ -11,12 +11,14 @@ import android.widget.TextView;
 import com.google.android.material.snackbar.Snackbar;
 
 import java.io.Serializable;
+import java.sql.Date;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.HashMap;
 import java.util.TreeMap;
 
 public class BuyActivity extends Cars {
-
+//    int j;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,13 +26,18 @@ public class BuyActivity extends Cars {
 
         currentCar = (Cars) getIntent().getSerializableExtra("Current");
 
-
         Intent intent = getIntent();
         Bundle args = intent.getBundleExtra("BUNDLE");
         ArrayList<Cars> carArray = (ArrayList<Cars>) args.getSerializable("ARRAYLIST");
         HashMap<String, Integer> carsSoldProfit = (HashMap<String, Integer>) getIntent().getSerializableExtra("PROFIT");
 
-
+//        for( int i = 0; i < carArray.size(); i++)
+//        {
+//            if(carArray.get(i).equals(currentCar)){
+//                j = i;
+//            }
+//
+//        }
         TextView textView = findViewById(R.id.totals2);
 //        textView.setText(getTotal());
         textView.setText(currentCar.getPrice());
@@ -40,10 +47,10 @@ public class BuyActivity extends Cars {
         textView2.setText(currentCar.getCarName());
 //        TextView totalAmount = findViewById(R.id.totalAmount);
 //        TextView totalPrice = findViewById(R.id.totalPrice2);
-////        totalAmount.setText(getAmount());
+////        totalAmount.0setText(getAmount());
 //        totalPrice.setText(getPrice());
 
-        ArrayList<Cars> finalCarArray = carArray;
+        int remove = carArray.indexOf(currentCar);
         View.OnClickListener onClickListener = new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -55,47 +62,63 @@ public class BuyActivity extends Cars {
                 switch (selectedItemIdM) {
                     case R.id.vehicleButton5:
                         Intent = new Intent(getApplicationContext(), MainActivity.class);
-                        Intent.putExtra("PROFIT",(Serializable) carsSoldProfit);
+                        Intent.putExtra("PROFIT", (Serializable) carsSoldProfit);
                         Intent.putExtra("Current", currentCar);
 
                         args = new Bundle();
-                        args.putSerializable("ARRAYLIST",(Serializable) finalCarArray);
-                        Intent.putExtra("BUNDLE",args);
+                        args.putSerializable("ARRAYLIST", (Serializable) carArray);
+                        Intent.putExtra("BUNDLE", args);
 
                         startActivity(Intent);
                         break;
                     case R.id.submit3:
-                        Intent = new Intent(getApplicationContext(), ViewActivity.class);
                         Person person = submitting();
-//                        Bundle bundle = new Bundle();
-//                        bundle.putSerializable("PERSON",(Serializable) person);
-
-                        Cars.setCarsSold(Cars.getCarsSold() + getAmount());
-                        Cars.setProfit(Cars.getProfit() + getTotal());
-                        currentCar.setIsAvailable(false);
-//                        Intent.putExtra("PROFIT", finalprofit[0]);
-//                        Intent.putExtra("CARSSOLD", finalcarssold[0]);
-                        Intent.putExtra("PROFIT",(Serializable) carsSoldProfit);
-                        Intent.putExtra("Current", currentCar);
-
-                        args = new Bundle();
-                        args.putSerializable("ARRAYLIST",(Serializable) finalCarArray);
-                        Intent.putExtra("BUNDLE",args);
-
-                        startActivity(Intent);
 
                         break;
                     case R.id.BackToView:
 
                         Intent = new Intent(getApplicationContext(), ViewActivity.class);
+                        Intent.putExtra("PROFIT", (Serializable) carsSoldProfit);
+                        Intent.putExtra("Current", currentCar);
+
+                        args = new Bundle();
+                        args.putSerializable("ARRAYLIST", (Serializable) carArray);
+                        Intent.putExtra("BUNDLE", args);
+                        startActivity(Intent);
+                        break;
+                    case R.id.Pay:
+                        Intent = new Intent(getApplicationContext(), ViewActivity.class);
+                        try {
+                            Cars.setCarsSold(Cars.getCarsSold() + getAmount());
+                        } catch (Exception e) {
+                            System.out.println(e);
+                        }
+                        try {
+                            Cars.setProfit(Cars.getProfit() + getTotal());
+                        } catch (Exception e){
+                            System.out.println(e);
+                        }
+                        try {
+                            currentCar.setIsAvailable(false);
+                        }catch(Exception e) {
+                            System.out.println(e);
+                        }
+                        try{
+                            currentCar.setSold(String.valueOf(Calendar.DATE));
+                        }catch(Exception e){
+                            System.out.println(e);
+                        }
+//                        carArray.set(j, currentCar);
+
                         Intent.putExtra("PROFIT",(Serializable) carsSoldProfit);
                         Intent.putExtra("Current", currentCar);
 
                         args = new Bundle();
-                        args.putSerializable("ARRAYLIST",(Serializable) finalCarArray);
+                        args.putSerializable("ARRAYLIST",(Serializable) carArray);
                         Intent.putExtra("BUNDLE",args);
                         startActivity(Intent);
                         break;
+
                     default:
                         Snackbar.make(view, "unknown item selected", Snackbar.LENGTH_LONG).show();
                 }

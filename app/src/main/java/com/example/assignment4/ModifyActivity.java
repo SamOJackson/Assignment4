@@ -67,7 +67,7 @@ public class ModifyActivity extends Cars {
 
 
 
-        ArrayList<Cars> finalCarArray = carArray;
+      //  ArrayList<Cars> carArray = carArray;
         View.OnClickListener onClickListener = new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -107,15 +107,15 @@ public class ModifyActivity extends Cars {
                         break;
                     case R.id.submit:
                         Intent = new Intent(getApplicationContext(), ViewActivity.class);
-                        finalCarArray.set(getPlace, submitting());
+                        carArray.set(getPlace, submitting());
 
-//                        finalCarArray.set(finalCarArray.indexOf(currentCar), submitting());
+//                        carArray.set(carArray.indexOf(currentCar), submitting());
 
                         Intent.putExtra("Current", currentCar);
 //                        Intent.putExtra("Array", carArray);
 
                         args = new Bundle();
-                        args.putSerializable("ARRAYLIST",(Serializable) finalCarArray);
+                        args.putSerializable("ARRAYLIST",(Serializable) carArray);
                         Intent.putExtra("BUNDLE", args);
                         Snackbar.make(view, "Car Added", Snackbar.LENGTH_LONG).show();
 
@@ -184,18 +184,20 @@ public class ModifyActivity extends Cars {
         String mCylinderString = ModifyCylinder.getText().toString();
         int mCylinder = Integer.parseInt(mCylinderString);
         boolean check = simpleCheckBox.isChecked();
+        try {
+            currentCar.setCarModel(models);
+            currentCar.setSold(dates);
+            currentCar.setColor(colors);
 
-        currentCar.setCarModel(models);
-        currentCar.setSold(dates);
-        currentCar.setColor(colors);
-
-        currentCar.setCarName(cname);
-        currentCar.setCarCompany(cmp);
-        currentCar.setYear(mYear);
-        currentCar.setPrice(mPrice);
-        currentCar.setCylinders(mCylinder);
-        currentCar.setIsAvailable(check);
-
+            currentCar.setCarName(cname);
+            currentCar.setCarCompany(cmp);
+            currentCar.setYear(mYear);
+            currentCar.setPrice(mPrice);
+            currentCar.setCylinders(mCylinder);
+            currentCar.setIsAvailable(check);
+        }catch(Exception e){
+            System.out.println(e);
+        }
 //        Cars newCar = new Cars(cname, cmp, check);
         Cars newCarfull = new Cars(cmp, mCylinder, mYear, mPrice, check, cname);
 
@@ -228,10 +230,20 @@ public class ModifyActivity extends Cars {
         details.setText(currentCar.getCarCompany());
 
         Boolean checkBoxState = simpleCheckBox.isChecked();
+
         if (checkBoxState) {
-            currentCar.setIsAvailable(true);
+            try {
+                currentCar.setIsAvailable(true);
+            }catch(Exception e){
+                System.out.println(e);
+            }
+
         } else {
-            currentCar.setIsAvailable(false);
+            try{
+                currentCar.setIsAvailable(false);
+            }catch(Exception e){
+                System.out.println(e);
+            }
         }
 //        return newCar;
         currentCar = newCarfull;
