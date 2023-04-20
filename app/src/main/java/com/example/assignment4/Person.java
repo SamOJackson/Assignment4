@@ -15,7 +15,10 @@ public class Person {
         return personName;
     }
 
-    public void setPersonName(String personName) {
+    public void setPersonName(String personName) throws Exception{
+        if(personName == null){
+            throw new Exception("Cannot be null");
+        }
         this.personName = personName;
     }
 
@@ -23,7 +26,10 @@ public class Person {
         return address;
     }
 
-    public void setAddress(String address) {
+    public void setAddress(String address) throws Exception{
+        if(address == null){
+            throw new Exception("Cannot be null");
+        }
         this.address = address;
     }
 
@@ -31,7 +37,10 @@ public class Person {
         return card;
     }
 
-    public void setCard(String card) {
+    public void setCard(String card) throws Exception{
+        if(card == null){
+            throw new Exception("Cannot be null");
+        }
         this.card = card;
     }
 }

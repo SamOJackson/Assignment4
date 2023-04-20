@@ -184,18 +184,20 @@ public class ModifyActivity extends Cars {
         String mCylinderString = ModifyCylinder.getText().toString();
         int mCylinder = Integer.parseInt(mCylinderString);
         boolean check = simpleCheckBox.isChecked();
+        try {
+            currentCar.setCarModel(models);
+            currentCar.setSold(dates);
+            currentCar.setColor(colors);
 
-        currentCar.setCarModel(models);
-        currentCar.setSold(dates);
-        currentCar.setColor(colors);
-
-        currentCar.setCarName(cname);
-        currentCar.setCarCompany(cmp);
-        currentCar.setYear(mYear);
-        currentCar.setPrice(mPrice);
-        currentCar.setCylinders(mCylinder);
-        currentCar.setIsAvailable(check);
-
+            currentCar.setCarName(cname);
+            currentCar.setCarCompany(cmp);
+            currentCar.setYear(mYear);
+            currentCar.setPrice(mPrice);
+            currentCar.setCylinders(mCylinder);
+            currentCar.setIsAvailable(check);
+        }catch(Exception e){
+            System.out.println(e);
+        }
 //        Cars newCar = new Cars(cname, cmp, check);
         Cars newCarfull = new Cars(cmp, mCylinder, mYear, mPrice, check, cname);
 
@@ -228,10 +230,20 @@ public class ModifyActivity extends Cars {
         details.setText(currentCar.getCarCompany());
 
         Boolean checkBoxState = simpleCheckBox.isChecked();
+
         if (checkBoxState) {
-            currentCar.setIsAvailable(true);
+            try {
+                currentCar.setIsAvailable(true);
+            }catch(Exception e){
+                System.out.println(e);
+            }
+
         } else {
-            currentCar.setIsAvailable(false);
+            try{
+                currentCar.setIsAvailable(false);
+            }catch(Exception e){
+                System.out.println(e);
+            }
         }
 //        return newCar;
         currentCar = newCarfull;

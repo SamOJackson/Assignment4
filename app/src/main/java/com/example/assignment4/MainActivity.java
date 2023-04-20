@@ -153,7 +153,7 @@ public class MainActivity extends Cars {
                  }
              }catch(Exception e)
              {
-                 Toast.makeText(getApplicationContext(),"Out of Bounds Exception", Toast.LENGTH_LONG).show();
+                 Toast.makeText(getApplicationContext(),"O", Toast.LENGTH_LONG).show();
              }
          }
 

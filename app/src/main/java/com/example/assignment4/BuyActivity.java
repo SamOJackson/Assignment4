@@ -70,9 +70,22 @@ public class BuyActivity extends Cars {
 //                        Bundle bundle = new Bundle();
 //                        bundle.putSerializable("PERSON",(Serializable) person);
 
-                        Cars.setCarsSold(Cars.getCarsSold() + getAmount());
-                        Cars.setProfit(Cars.getProfit() + getTotal());
-                        currentCar.setIsAvailable(false);
+                        try {
+                            Cars.setCarsSold(Cars.getCarsSold() + getAmount());
+                        } catch (Exception e) {
+                            throw new RuntimeException(e);
+                        }
+                        try {
+                            Cars.setProfit(Cars.getProfit() + getTotal());
+                        }catch(Exception e){
+                            throw new RuntimeException(e);
+                        }
+                        try{
+                            currentCar.setIsAvailable(false);
+                        }catch(Exception e){
+                            throw new RuntimeException(e);
+                        }
+//
 //                        Intent.putExtra("PROFIT", finalprofit[0]);
 //                        Intent.putExtra("CARSSOLD", finalcarssold[0]);
                         Intent.putExtra("PROFIT",(Serializable) carsSoldProfit);

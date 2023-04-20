@@ -60,23 +60,32 @@ public class Cars extends AppCompatActivity implements Serializable{
         return carModel;
     }
 
-    public void setCarModel(String carModel) {
-        this.carModel = carModel;
+    public void setCarModel (String carModel) throws Exception {
+        if (carModel == null) {
+            throw new Exception("Cannot be null");
+        }
+            this.carModel = carModel;
     }
 
     public static String getCCompanyName() {
         return CCompanyName;
     }
 
-    public static void setCCompanyName(String CCompanyName2) {
-        CCompanyName = CCompanyName2;
+    public static void setCCompanyName(String CCompanyName2) throws Exception{
+        if (CCompanyName == null) {
+            throw new Exception("Cannot be null");
+        }CCompanyName = CCompanyName2;
     }
 
     public static String getCCompanyAddress() {
         return CCompanyAddress;
     }
 
-    public static void setCCompanyAddress(String CCompanyAddress2) {
+    public static void setCCompanyAddress(String CCompanyAddress2) throws Exception {
+        if(CCompanyAddress2 == null)
+        {
+            throw new Exception("Cannot be null");
+        }
         CCompanyAddress = CCompanyAddress2;
     }
 
@@ -84,7 +93,11 @@ public class Cars extends AppCompatActivity implements Serializable{
         return total;
     }
 
-    public static void setTotal(int total) {
+    public static void setTotal(int total) throws Exception {
+        if(total < 0)
+        {
+            throw new Exception("Cannot be less than 0");
+        }
         Cars.total = total;
     }
 
@@ -92,7 +105,11 @@ public class Cars extends AppCompatActivity implements Serializable{
         return amount;
     }
 
-    public static void setAmount(int amount) {
+    public static void setAmount(int amount)throws Exception {
+        if(amount < 0)
+        {
+            throw new Exception("Cannot be less than 0");
+        }
         Cars.amount = amount;
     }
 
@@ -248,12 +265,19 @@ public class Cars extends AppCompatActivity implements Serializable{
 //        this.carImageName = carImageName;
     }
 
-    public void setCarName(String carName) {
+    public void setCarName(String carName) throws Exception {
+        if(carName == null)
+        {
+            throw new Exception("Cannot be null");
+        }
         this.carName = carName;
     }
 
-    public void setCarId(int carId) {
-        this.carId = carId;
+    public void setCarId(int carId) throws Exception {
+        if(carId < 0)
+        {
+            throw new Exception("Cannot be less than 0");
+        }this.carId = carId;
     }
 
 //    public void setCarImageName(String carName) {
@@ -283,8 +307,12 @@ public class Cars extends AppCompatActivity implements Serializable{
 //        this.carImageName = carImageName;
 //    }
 
-    public void setCarCompany(String carCompany) {
-        this.carCompany = carCompany;
+    public void setCarCompany(String carCompany) throws Exception {
+            if(carCompany == null)
+            {
+                throw new Exception("Cannot be null");
+            }
+            this.carCompany = carCompany;
     }
 
     public void setIsAvailable(boolean isAvailable) {
@@ -297,7 +325,11 @@ public class Cars extends AppCompatActivity implements Serializable{
         return cylinders2;
     }
 
-    public void setCylinders(int cylinders) {
+    public void setCylinders(int cylinders) throws Exception {
+        if(cylinders < 0)
+        {
+            throw new Exception("Cannot be less than 0");
+        }
         this.cylinders = cylinders;
     }
 
@@ -306,7 +338,11 @@ public class Cars extends AppCompatActivity implements Serializable{
         return year2;
     }
 
-    public void setYear(int year) {
+    public void setYear(int year) throws Exception {
+        if(year < 1900)
+        {
+            throw new Exception("Cannot be less than 0");
+        }
         this.year = year;
     }
 
@@ -319,7 +355,11 @@ public class Cars extends AppCompatActivity implements Serializable{
         return (int) price;
     }
 
-    public void setPrice(int price) {
+    public void setPrice(int price) throws Exception {
+        if(price < 0)
+        {
+            throw new Exception("Cannot be less than 0");
+        }
         this.price = price;
     }
 
@@ -335,7 +375,11 @@ public class Cars extends AppCompatActivity implements Serializable{
         return carsSold;
     }
 
-    public static void setCarsSold(int carsSold2) {
+    public static void setCarsSold(int carsSold2) throws Exception {
+        if(carsSold2 < 0)
+        {
+            throw new Exception("Cannot be less than 0");
+        }
         carsSold = carsSold2;
     }
 
@@ -343,7 +387,11 @@ public class Cars extends AppCompatActivity implements Serializable{
         return color;
     }
 
-    public void setColor(String color) {
+    public void setColor(String color) throws Exception {
+        if(color == null)
+        {
+            throw new Exception("Cannot be null");
+        }
         this.color = color;
     }
 
@@ -351,7 +399,12 @@ public class Cars extends AppCompatActivity implements Serializable{
         return sold;
     }
 
-    public void setSold(String sold) {
+    public void setSold(String sold)
+            throws Exception {
+        if(sold == null)
+        {
+            throw new Exception("Cannot be less null");
+        }
         this.sold = sold;
     }
 
@@ -384,7 +437,7 @@ public class Cars extends AppCompatActivity implements Serializable{
         Cars car4 = new Cars("Red Car Company","SSR", 4, 2012, 3000, "red","", true, "Red Car");
         Cars car5 = new Cars("Yellow Car Company", "GT", 6, 2021, 35000,"Yellow", "",true, "Yellow Car");
         Cars car6 = new Cars("Cars Car Company", "RX", 8, 2022, 40000,"Yellow","", true, "Cars Car");
-        Cars car7 = new Cars("Question Car Company", "Sedan", 6, 2021, 35000, "Red", "09-12-22", false, "Question Car");
+       // Cars car7 = new Cars("Question Car Company", "Sedan", 6, 2021, 35000, "Red", "09-12-22", false, "Question Car");
 
 
 //        carCompany = carCompany;
@@ -405,7 +458,7 @@ public class Cars extends AppCompatActivity implements Serializable{
         carArray.add(car4);
         carArray.add(car5);
         carArray.add(car6);
-        carArray.add(car7);
+        //        carArray.add(car7);
 
         return carArray;
     }
